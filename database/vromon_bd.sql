@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 18, 2019 at 03:56 PM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Generation Time: Aug 19, 2019 at 09:30 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 5.6.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -132,6 +132,36 @@ INSERT INTO `cumilla` (`ID`, `placeName`, `placeImage`, `placeDetails`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `destination`
+--
+
+CREATE TABLE `destination` (
+  `ID` int(11) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `Country` varchar(50) NOT NULL,
+  `State` varchar(50) DEFAULT NULL,
+  `Description` text NOT NULL,
+  `Image` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `destination`
+--
+
+INSERT INTO `destination` (`ID`, `Name`, `Country`, `State`, `Description`, `Image`) VALUES
+(1, 'Barisal', 'Bangladesh', NULL, '', 'images\\destination\\barishal.jpg'),
+(2, 'Chittagong', 'Bangladesh', NULL, '', 'images\\destination\\chittagong.jpg'),
+(3, 'Dhaka', 'Bangladesh', NULL, '', 'images\\destination\\dhaka.jpg'),
+(4, 'Khulna', 'Bangladesh', NULL, '', 'images\\destination\\khulna.jpg'),
+(5, 'Mymensingh', 'Bangladesh', NULL, '', 'images\\destination\\mymen.jpg'),
+(6, 'Rajshahi', 'Bangladesh', NULL, '', 'images\\destination\\raj.jpg'),
+(7, 'Rangpur', 'Bangladesh', NULL, '', 'images\\destination\\rangpur.jpg'),
+(8, 'Sylhet', 'Bangladesh', NULL, '', 'images\\destination\\syl.jpg'),
+(9, 'Comilla', 'Bangladesh', NULL, 'Comilla, officially known as Cumilla, is a city in the Chittagong Division of Bangladesh, located along the Dhaka-Chittagong Highway. It is the administrative centre of the Comilla District, part of the Chittagong Division. Comilla is the second-largest city of eastern Bangladesh after Chittagong and is one of the three oldest cities in Bangladesh.', 'images\\destination\\demo.png');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dhaka`
 --
 
@@ -163,6 +193,51 @@ INSERT INTO `dhaka` (`ID`, `placeName`, `placeImage`, `placeDetails`) VALUES
 (21, 'Jamuna Future Park', 'jamuna.jpg', 'Jamuna Future Park is a shopping mall in Dhaka, and the largest shopping mall in Bangladesh with a gross leasable area of 1,614,586 square feet (150,000 m2). It was inaugurated on 6 September 2013. Construction began in 2002, by Jamuna Builders Ltd., a subsidiary of the Jamuna Group and the exterior was completed in 2008.			'),
 (22, 'Basundhara City', 'bashundhara-city-shopping-mall.jpg', 'Bashundhara City is a shopping mall in Dhaka, and the second largest shopping mall in Bangladesh. Opened to the public on 6 August 2004, the mall located in Panthapath, near Kawran Bazar. Bashundhara City is a 19 floor building complex covering an area of 191200 sqft comprising an 8 floor podium containing retail spaces, theme Park, cinemas, fitness club, swimming pool and food court with a 19-storey Corporate Office of Bashundhara Group.			'),
 (23, 'Rose Garden Palace', 'rose.jpg', 'The Rose Garden Palace is a mansion and garden in Old Dhaka. Built in the late 19th century, it became birthplace of the Awami League in 1949, when East Bengali liberal and social democrats converged in Dhaka to form an alternative political force against the Muslim League in Pakistan.			');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `district`
+--
+
+CREATE TABLE `district` (
+  `ID` int(11) NOT NULL,
+  `DestinationID` int(11) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `Image` varchar(100) NOT NULL,
+  `Title` varchar(700) NOT NULL,
+  `Description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `district`
+--
+
+INSERT INTO `district` (`ID`, `DestinationID`, `Name`, `Image`, `Title`, `Description`) VALUES
+(1, 2, 'Bandarban', 'images\\district\\cover\\bandarban.jpg', 'Bandarban, is a district in South-Eastern Bangladesh, and a part of the Chittagong Division.', 'Bandarban, is a district in South-Eastern Bangladesh, and a part of the Chittagong Division. It is one of the three hill districts of Bangladesh and a part of the Chittagong Hill Tracts, the others being Rangamati District and Khagrachhari District. Bandarban city is the headquarter of the Bandarban district. Bandarban district (4,479 km²) is not only the most remote district of the country, but also is the least populous (population 292,900). There is an army contingent at Bandarban Cantonment.\r\n\r\nBandarban town is the hometown of the Bohmong Chief (currently King, or Raja, U Cho Prue Marma) who is the head of the Bohmong Circle. Of the other hill districts, Rangamati is the Chakma Circle, headed by Raja Devasish Roy and Khagrachari is the Mong Circle, headed by Raja Sachingprue Marma. Bandarban is regarded as one of the most attractive travel destinations in Bangladesh. It also is the administrative headquarters of Bandarban district, which has turned into one of the most exotic tourist attractions in Bangladesh.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `place`
+--
+
+CREATE TABLE `place` (
+  `ID` int(11) NOT NULL,
+  `DistrictID` int(11) NOT NULL,
+  `Name` varchar(100) NOT NULL,
+  `Tag` varchar(100) NOT NULL,
+  `Image` varchar(100) NOT NULL,
+  `Location` text NOT NULL,
+  `Description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `place`
+--
+
+INSERT INTO `place` (`ID`, `DistrictID`, `Name`, `Tag`, `Image`, `Location`, `Description`) VALUES
+(1, 1, 'Nafakhum', 'Waterfall', 'images\\place\\bandarban\\nafakhum.jpg', 'The falls are located in a remote area two hours\' walking distance from Remakree bazar, Thanchi Upazila, Bandarban District. In the rainy season while water level increases, navigation by boat to Ngafakhong is about 20-25 minutes journey which can be hired from Remaikree estuary.', 'Nafakhum is one of the most beautiful waterfalls in Bangladesh and an excellent place to travel. Every traveler should have a tour plan to visit this beautiful tourism spot of Bandarban at least once and then they will feel to visit that travel spot again and again.');
 
 -- --------------------------------------------------------
 
@@ -243,9 +318,27 @@ ALTER TABLE `cumilla`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `destination`
+--
+ALTER TABLE `destination`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `dhaka`
 --
 ALTER TABLE `dhaka`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `district`
+--
+ALTER TABLE `district`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `place`
+--
+ALTER TABLE `place`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -289,10 +382,28 @@ ALTER TABLE `cumilla`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
+-- AUTO_INCREMENT for table `destination`
+--
+ALTER TABLE `destination`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT for table `dhaka`
 --
 ALTER TABLE `dhaka`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `district`
+--
+ALTER TABLE `district`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `place`
+--
+ALTER TABLE `place`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `rangamati`
