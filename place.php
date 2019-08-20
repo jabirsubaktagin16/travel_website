@@ -1,6 +1,7 @@
 <?php 
 
     include "zzz-dbConnect.php";
+    session_start();
 
     if( isset($_GET['placeName']) && isset($_GET['placeID']) ){
         $placeName = $_GET['placeName'];

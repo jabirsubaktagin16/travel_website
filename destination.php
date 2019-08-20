@@ -1,4 +1,7 @@
-<?php include "zzz-dbConnect.php"; ?>
+<?php 
+  include "zzz-dbConnect.php"; 
+  session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="en">

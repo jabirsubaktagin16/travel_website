@@ -1,6 +1,7 @@
 <?php 
     include "zzz-dbConnect.php";
-
+    session_start();
+    
     if( isset($_GET['destName']) && isset($_GET['destID']) ){
         $destName = $_GET['destName'];
         $destID = $_GET['destID'];

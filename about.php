@@ -85,7 +85,7 @@
               <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ab quas facilis obcaecati non ea, est odit repellat distinctio incidunt, quia aliquam eveniet quod deleniti impedit sapiente atque tenetur porro?</p>
               <p>
                 <a href="https://github.com/mirarifhasan" class="pl-0 pr-3"><span class="icon-github"></span></a>
-                <a href="https://www.instagram.com/arif_ishan_05/?hl=en" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
+                <a href="https://www.linkedin.com/in/mirarifhasan/" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
                 <a href="https://www.facebook.com/mirarifhasan" class="pl-3 pr-3"><span class="icon-facebook"></span></a>
               </p>
             </div>

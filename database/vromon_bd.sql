@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 19, 2019 at 09:30 PM
+-- Generation Time: Aug 20, 2019 at 04:55 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 5.6.38
 
@@ -289,6 +289,28 @@ INSERT INTO `sylhet` (`ID`, `placeName`, `placeImage`, `placeDetails`) VALUES
 (5, 'Lalakhal', 'lalakhal.jpg', 'Lalakhal is one of the most attractive tourist spots in Sylhet. Lalakhal is a wide canal located Sharee River near the Tamabil road. The river is not much deep and it is one of the sources of sand in Sylhet. The focal point of the canal is water. The water has a variety of colors blue, green, clear water at different points.		'),
 (6, 'SUST Campus', 'sust.jpg', 'Shahjalal University of Science and Technology also known as SUST is a public research university based in Sylhet, Bangladesh. It was founded as the first of eight science and technology universities of the country by the Government of Bangladesh according to a university act to give special importance in science and technology education. It is the Flagship University of the Science and Technology System of Bangladesh.		');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `ID` int(11) NOT NULL,
+  `FirstName` varchar(50) NOT NULL,
+  `LastName` varchar(50) NOT NULL,
+  `Phone` varchar(20) NOT NULL,
+  `Email` varchar(30) NOT NULL,
+  `Password` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`ID`, `FirstName`, `LastName`, `Phone`, `Email`, `Password`) VALUES
+(1, 'ds', 'a', '123', 'arif@gmail.com', '123');
+
 --
 -- Indexes for dumped tables
 --
@@ -354,6 +376,12 @@ ALTER TABLE `sylhet`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -416,6 +444,12 @@ ALTER TABLE `rangamati`
 --
 ALTER TABLE `sylhet`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

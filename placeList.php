@@ -1,6 +1,7 @@
 <?php 
 
     include "zzz-dbConnect.php";
+    session_start();
 
     if( isset($_GET['distName']) && isset($_GET['distID']) ){
         $distName = $_GET['distName'];
