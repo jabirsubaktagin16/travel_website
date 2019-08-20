@@ -2,9 +2,9 @@
 
     include "zzz-dbConnect.php";
 
-    if( isset($_GET['distName']) && isset($_GET['distID']) ){
-        $distName = $_GET['distName'];
-        $distID = $_GET['distID'];
+    if( isset($_GET['placeName']) && isset($_GET['placeID']) ){
+        $placeName = $_GET['placeName'];
+        $placeID = $_GET['placeID'];
     }
 
 ?>
@@ -45,45 +45,34 @@
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-              <h1 class="text-white font-weight-light">Places in <?php echo $distName;?></h1>
+              <h1 class="text-white font-weight-light">About <?php echo $placeName;?></h1>
               <div>
-                <a href="index">Home</a> <span class="mx-2 text-white">&bullet;</span> <span class="text-white">Places</span>
+                <a href="index">Home</a> <span class="mx-2 text-white">&bullet;</span> <span class="text-white">Place</span>
               </div>
             </div>
           </div>
         </div>
       </div>  
 
+      
       <div class="site-section">
         <div class="container">
+
+          <!-- About the place start-->
           <div class="row mb-3 align-items-stretch">
-            
             <?php
-              $sql = "SELECT * FROM place WHERE DistrictID = ". $distID;
+              $sql = "SELECT * FROM place WHERE ID = ". $placeID;
               $result = mysqli_query($link, $sql);
+              $row = mysqli_fetch_array($result);
               $count = mysqli_num_rows($result);
 
               if($count > 0){
             ?>
-                <div class="col-12 text-center">
-                  <div class='h-entry'>
-                    <h2 class="font-size-regular">Find spots in <?php echo $distName;?></h2><br>
-                  </div>
+                <div class="h-entry">
+                  <p><?php echo $row['Description']?></p>
                 </div>
-              
-            <?php
-                while($row = mysqli_fetch_array($result)) { ?>
-                  
-                  <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-                    <div class="h-entry">
-                      <a href="place?placeID=<?php echo $row['ID']?>&placeName=<?php echo $row['Name']?>"><img src="<?php echo $row['Image']?>" alt="Image" class="img-fluid"></a>
-                      <h2 class="font-size-regular"><a href="place?placeID=<?php echo $row['ID']?>&placeName=<?php echo $row['Name']?>"><?php echo $row['Name']?></a></h2>
-                      <p><?php echo $row['Location']?></p>
-                    </div> 
-                  </div>
-            
-              <?php    
-                }
+            <?php    
+                
               } else {
                 echo '
                 <div class="col-12 text-center">
@@ -92,9 +81,11 @@
                   </div>
                 </div>';
               }
-              ?>
+            ?>
           </div>
+          <!-- About the place end-->
           
+
           <div class="row">
             <div class="col-12 text-center">
               <!-- <a href="#" class="btn btn-outline-primary border-2 py-3 px-5">Load More Posts...</a> -->
