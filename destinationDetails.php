@@ -77,11 +77,7 @@
                     <div class="h-entry">
                       <a href="placeList?distID=<?php echo $row['ID']?>&distName=<?php echo $row['Name']?>"><img src="<?php echo $row['Image']?>" alt="Image" class="img-fluid"></a>
                       <h2 class="font-size-regular"><a href="placeList?distID=<?php echo $row['ID']?>&distName=<?php echo $row['Name']?>"><?php echo $row['Name']?></a></h2>
-<<<<<<< HEAD
                       <p><?php echo $row['Description']?></p>
-=======
-                      <p><?php echo $row['Title']?></p>
->>>>>>> 72c7ef9a7148452bb487d0d4a595af32c7284a5b
                     </div> 
                   </div>
             

@@ -13,11 +13,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-<<<<<<< HEAD
     <title>Vromon BD</title>
-=======
-    <title>Travalers &mdash; Colorlib Website Template</title>
->>>>>>> 72c7ef9a7148452bb487d0d4a595af32c7284a5b
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
