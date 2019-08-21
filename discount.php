@@ -1,9 +1,13 @@
-<?php include "zzz-dbConnect.php"; ?>
+<?php 
+  include "zzz-dbConnect.php"; 
+  session_start();
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Travalers &mdash; Colorlib Website Template</title>
+    <title>Vromon BD</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -17,42 +21,35 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
-
     <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mediaelement@4.2.7/build/mediaelementplayer.min.css">
 
-
     <link rel="stylesheet" href="css/aos.css">
-
     <link rel="stylesheet" href="css/style.css">
-    
   </head>
   <body>
   
   <div class="site-wrap">
+    
     <!-- Including header module -->
     <?php include'zzz-header.php';?>
    
-
+    <!-- Slider -->
     <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
-        <div class="container">
-          <div class="row align-items-center justify-content-center text-center">
-
-            <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-              <h1 class="text-white font-weight-light">Avail with Our Discounted Tours</h1>
-              <div><a href="index">Home</a> <span class="mx-2 text-white">&bullet;</span> <span class="text-white">Discount</span></div>
-              
+      <div class="container">
+        <div class="row align-items-center justify-content-center text-center">
+          <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
+            <h1 class="text-white font-weight-light">Avail with Our Discounted Tours</h1>
+            <div>
+              <a href="index">Home</a> <span class="mx-2 text-white">&bullet;</span> <span class="text-white">Discount</span>
             </div>
           </div>
         </div>
-      </div>  
+      </div>
+    </div>  
 
-
-    
-
+    <!-- Discount Card Section -->
     <div class="site-section">
-      
       <div class="container">
         
         <div class="row">
@@ -131,14 +128,14 @@
             </a>
           </div>
         </div>
+
       </div>
-    
     </div>
 
+    <!-- Testimonial -->
     <div class="site-section block-13 bg-light">
-  
-
-    <div class="container">
+      <div class="container">
+        
         <div class="row justify-content-center mb-5">
           <div class="col-md-7">
             <h2 class="font-weight-light text-black text-center">What People Says</h2>
@@ -146,7 +143,7 @@
         </div>
 
         <div class="nonloop-block-13 owl-carousel">
-
+          
           <div class="item">
             <div class="container">
               <div class="row">
@@ -160,7 +157,6 @@
               </div>
             </div>
           </div>
-
           <div class="item">
             <div class="container">
               <div class="row">
@@ -174,7 +170,6 @@
               </div>
             </div>
           </div>
-
           <div class="item">
             <div class="container">
               <div class="row">
@@ -190,17 +185,21 @@
           </div>
 
         </div>
+
       </div>
     </div>
 
+    <!-- Service section -->
     <div class="site-section">
       <div class="container">
+        
         <div class="row justify-content-center mb-5">
           <div class="col-md-7 text-center">
             <h2 class="font-weight-light text-black">Our Services</h2>
             <p class="color-black-opacity-5">We Offer The Following Services</p>
           </div>
         </div>
+        
         <div class="row align-items-stretch">
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4">
             <div class="unit-4 d-flex">
@@ -264,8 +263,8 @@
               </div>
             </div>
           </div>
-
         </div>
+
       </div>
     </div>
     

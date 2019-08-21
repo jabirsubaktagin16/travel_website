@@ -13,7 +13,7 @@
         <div class="row align-items-center">
             
             <div class="col-6 col-xl-2">
-                <h1 class="mb-0"><a href="index" class="text-black h2 mb-0">Travelers</a></h1>
+                <a href="index" class="text-black h2 mb-0"><img src="images\vromonBD.png" width="100%" height="100%"></a>
             </div>
             <div class="col-10 col-md-8 d-none d-xl-block">
                 <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
@@ -48,19 +48,13 @@
             <div class="col-6 col-xl-2 text-right">
             <div class="d-none d-xl-inline-block">
                 <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
-                <li>
-                    <a href="#" class="pl-0 pr-3 text-black"><span class="icon-tripadvisor"></span></a>
-                </li>
-                <li>
-                    <a href="#" class="pl-3 pr-3 text-black"><span class="icon-twitter"></span></a>
-                </li>
-                <li>
-                    <a href="#" class="pl-3 pr-3 text-black"><span class="icon-facebook"></span></a>
-                </li>
-                <li>
-                    <a href="#" class="pl-3 pr-3 text-black"><span class="icon-instagram"></span></a>
-                </li>
-                
+                    <li>
+                        <?php if(!isset($_SESSION['ID'])) {?>
+                            <a href="login" class="pl-0 pr-3 text-black">Login / SignUp <span class="icon-user"></span></a>
+                        <?php } else {?>
+                            <a href="logout" class="pl-0 pr-3 text-black">Logout <span class="icon-user"></span></a>
+                        <?php } ?>
+                    </li>
                 </ul>
             </div>
 
