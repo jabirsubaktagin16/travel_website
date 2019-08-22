@@ -4,6 +4,7 @@
 	session_start();
     
     if(isset($_POST["post"])){
+        date_default_timezone_set('Asia/Dhaka');
         $sql = "INSERT INTO blogs (UserID,	Title, PlaceName, Description, Tag, DateTime) VALUES ('".$_SESSION['ID'] ."', '".trim($_POST["title"])."', '".trim($_POST["place"])."', '".trim($_POST["description"])."', '".trim($_POST["tag"])."', '".date("M d, Y")." at ".date("h:i a")."')";
         mysqli_query($link, $sql);
 

@@ -10,15 +10,12 @@
 
     $sql = "SELECT * FROM place WHERE ID = ". $placeID;
     $result = mysqli_query($link, $sql);
-    $row = mysqli_fetch_array($result);
     $count = mysqli_num_rows($result);
-    $coverImgPath = '';
-
-// echo $row['Image']; die();
+    $row = mysqli_fetch_array($result);
 
     if($count > 0)$coverImgPath = $row['Image'];
     else $coverImgPath = 'images/hero_bg_2.jpg';
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -73,8 +70,11 @@
           <!-- About the place start-->
           <div class="row mb-3 align-items-stretch">
             <?php
+              $sql = "SELECT * FROM place WHERE ID = ". $placeID;
+              $result = mysqli_query($link, $sql);
+              $count = mysqli_num_rows($result);
+              $row = mysqli_fetch_array($result);
               
-
               if($count > 0){
             ?>
                 <div class="h-entry">
@@ -95,8 +95,32 @@
           <!-- About the place end-->
           
           <!-- peoples experience -->
-          
+          <div class="site-section">
+            <div class="container">
+              <h3 style="text-align:center; margin-bottom:50px; ">Related Stories</h3>
+              <div class="row mb-3 align-items-stretch">
 
+                <?php
+                  $sql = "SELECT * FROM blogs WHERE PlaceName=\"".$placeName."\"";
+                  $res = mysqli_query($link, $sql);
+                  
+                  while($run = mysqli_fetch_array($res)){
+                ?>
+                    <div class="col-md-6 col-lg-6 mb-4 mb-lg-4" style="padding-bottom:40px;">
+                      <div class="h-entry">
+                        <!-- <img src="images/hero_bg_1.jpg" alt="Image" class="img-fluid"> -->
+                        <h2 class="font-size-regular"><a href="post?eid=<?php echo $run['ID']?>"><?php echo $run['Title']?></a></h2>
+                        <div class="meta mb-4"><?php echo $run['DateTime']?> <span class="mx-2">&bullet;</span> <a href="post?eid=<?php echo $row['ID']?>">View Details</a></div>
+                        <p><?php echo $run['Description']?></p>
+                      </div> 
+                    </div>
+                <?php
+                  }
+                ?>
+              </div>
+            </div>
+          </div>
+          
           <div class="row">
             <div class="col-12 text-center">
               <!-- <a href="#" class="btn btn-outline-primary border-2 py-3 px-5">Load More Posts...</a> -->
