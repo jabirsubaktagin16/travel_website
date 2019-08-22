@@ -105,10 +105,6 @@
                         <div>
                             <a href="index">Home</a> <span class="mx-2 text-white">&bullet;</span> <span
                                 class="text-white">Sign In</span>
-                        <h1 class="text-white font-weight-light">Log In</h1>
-                        <div>
-                            <a href="index">Home</a> <span class="mx-2 text-white">&bullet;</span> <span
-                                class="text-white">Log In</span>
                         </div>
                     </div>
                 </div>
