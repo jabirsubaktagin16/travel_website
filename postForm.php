@@ -2,63 +2,11 @@
     include "zzz-dbConnect.php"; 
     
 	session_start();
-
-	$phoneEmail = '';
-	$phone = '';
-    $email = '';
-    $password = '';
-    $error = '';
-
-	if(isset($_POST["login"])){
-        
-        $phoneEmail = trim($_POST["phoneEmail"]);
-
-        if(preg_match('/^[0-9]*$/', $phoneEmail))
-            $phone = $phoneEmail;
-        elseif(filter_var($phoneEmail, FILTER_VALIDATE_EMAIL))
-            $email = $phoneEmail;
-            
-		$password = trim($_POST["password"]);
-
-        if((!$phone=='' || !$email=='') && !$password==''){
-
-            $sql = 'select * from user where email="'.$email.'" or phone="'.$phone.'"';
-            $result = mysqli_query($link, $sql);
-            $noOfData = mysqli_num_rows($result);
-            
-            if($noOfData<1){
-                $error = "User not exist";
-            }
-            else{
-                $sql = 'select * from user where (phone="'.$phone.'" or email="'.$email.'") and password="'.$password.'"';
-                $result = mysqli_query($link, $sql);
-                $noOfData = mysqli_num_rows($result);
-                
-                if($noOfData<1){
-                    $error = "Password wrong";
-                }
-                else{
-                    $row =  mysqli_fetch_array($result);
-                    $_SESSION['ID'] = $row['ID'];
-                    $_SESSION['firstname'] = $row['FirstName'];
-                    $_SESSION['lastname'] = $row['LastName'];
-                    $_SESSION['phone'] = $row['Phone'];
-                    $_SESSION['email'] = $row['Email'];
-                    $_SESSION['password'] = $row['Password'];
-                    $_SESSION['point'] = $row['Point'];
-                    $_SESSION['Type'] = $row['Type'];
-                }
-            }
-        }else{
-            $error = 'Fill all fields';
-        }
-        if($error=='')
-            header('Location: index');
-        else{
-            echo "<script type='text/javascript'>alert('$error');</script>";
-        }
-	}
     
+    if(isset($_POST["post"])){
+		
+
+	}    
     
 ?>
 
@@ -101,10 +49,10 @@
             <div class="container">
                 <div class="row align-items-center justify-content-center text-center">
                     <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-                        <h1 class="text-white font-weight-light">Log In</h1>
+                        <h1 class="text-white font-weight-light">Share Your Story</h1>
                         <div>
                             <a href="index">Home</a> <span class="mx-2 text-white">&bullet;</span> <span
-                                class="text-white">Log In</span>
+                                class="text-white">Story</span>
                         </div>
                     </div>
                 </div>
@@ -119,31 +67,52 @@
 
                         <!-- Form -->
                         <form class="p-5 bg-white" method="POST">
-                            <!-- phone or email -->
+                            <!-- tile -->
                             <div class="row form-group">
-                                <div class="col-md-6">
-                                    <label class="text-black" for="phone">Phone / Email</label>
-                                    <input type="number" name="phoneEmail" id="phone" class="form-control" required>
+                                <div class="col-md-12 mb-3 mb-md-0">
+                                    <label class="text-black" for="title">Title</label>
+                                    <input type="text" name="title" id="title" class="form-control" required>
                                 </div>
                             </div>
-                            <!-- Password -->
+                            <!-- place location -->
                             <div class="row form-group">
                                 <div class="col-md-6">
-                                    <label class="text-black" for="password">Password</label>
-                                    <input type="password" name="password" id="password" class="form-control" required>
+                                    <label class="text-black" for="place">Place</label> <br>
+                                    <select class="select" name="place" id="place" required>
+                                        <option value="" disabled selected>Select Status</option>
+                                        
+                                        <?php
+                                            $sql = "SELECT ID, Name FROM place";
+                                            $result = mysqli_query($link, $sql);
+
+                                            while($row = mysqli_fetch_array($result)) {
+                                                echo '<option value="new" >'.$row['Name'].'</option>';
+                                            }
+                                        ?>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- description -->
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label class="text-black" for="description">Description</label>
+                                    <textarea rows="8" cols="50" name="description" id="description" class="form-control" placeholder="Tell us about your story of journey..." required></textarea>
+                                </div>
+                            </div>
+                            <!-- tags -->
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <label class="text-black" for="tag">Tags</label>
+                                    <input type="text" name="tag" id="tag" class="form-control" placeholder="Waterfall, Hill, etc." required>
                                 </div>
                             </div>
                             <!-- Button -->
                             <div class="row form-group">
-                                <div class="col-md-6">
-                                    <input type="submit" name="login" value="Log In"
-                                        class="btn btn-primary py-2 px-4 text-white">
+                                <div class="col-md-12" style="text-align:center; margin-top:20px;">
+                                    <input type="submit" name="post" value="Post" class="btn btn-primary py-2 px-4 text-white">
                                 </div>
                             </div>
-                            <!-- Create an account -->
-                            <p class="lost-password form-group">
-                                <a href="signup" rel="nofollow" style="padding-top=90px;">Create an account</a>
-                            </p> 
                         </form>
                     </div>
 

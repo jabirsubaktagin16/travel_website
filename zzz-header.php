@@ -13,7 +13,7 @@
         <div class="row align-items-center">
             
             <div class="col-6 col-xl-2">
-                <a href="index" class="text-black h2 mb-0"><img src="images\vromonBD.png" width="100%" height="100%"></a>
+                <a href="index" class="text-black h2 mb-0"><img src="images\vromonBD.png" width="200px" height="60px"></a>
             </div>
             <div class="col-10 col-md-8 d-none d-xl-block">
                 <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
@@ -46,19 +46,19 @@
             </div>
 
             <div class="col-6 col-xl-2 text-right">
-            <div class="d-none d-xl-inline-block">
-                <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
-                    <li>
-                        <?php if(!isset($_SESSION['ID'])) {?>
-                            <a href="login" class="pl-0 pr-3 text-black">Login / SignUp <span class="icon-user"></span></a>
-                        <?php } else {?>
-                            <a href="logout" class="pl-0 pr-3 text-black">Logout <span class="icon-user"></span></a>
-                        <?php } ?>
-                    </li>
-                </ul>
-            </div>
+                <div class="d-none d-xl-inline-block">
+                    <ul class="site-menu js-clone-nav ml-auto list-unstyled d-flex text-right mb-0" data-class="social">
+                        <li>
+                            <?php if(!isset($_SESSION['ID'])) {?>
+                                <a href="login" class="pl-0 pr-3 text-black">Login / SignUp <span class="icon-user"></span></a>
+                            <?php } else {?>
+                                <a href="logout" class="pl-0 pr-3 text-black">Logout <span class="icon-user"></span></a>
+                            <?php } ?>
+                        </li>
+                    </ul>
+                </div>
 
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+                <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
 
             </div>
 
