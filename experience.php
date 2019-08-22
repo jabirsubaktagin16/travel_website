@@ -1,6 +1,7 @@
 <?php 
     include "zzz-dbConnect.php"; 
     session_start();
+
   ?>
 
 <!DOCTYPE html>
@@ -47,11 +48,27 @@
           </div>
         </div>
       </div>  
- 
+
+      <!-- Add Experience Section -->
+      <div class="site-section border-top">
+        <div class="container">
+          <div class="row text-center">
+            <div class="col-md-12" style="display:flex; margin-top:0px;">
+              <h4 class="mb-5 text-black" style="margin-right:20px;">Add your travel experience</h4>
+              <?php if(isset($_SESSION['ID'])) {?>
+                <p style="margin-top:-7px;"><a href="postForm" class="btn btn-primary py-2 px-5 text-white">ADD</a></p>
+              <?php } else {?>
+                  <p style="margin-top:-7px;"><a onclick="alert('Login first!');" class="btn btn-primary py-2 px-5 text-white">ADD</a></p>
+              <?php }?>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Post/Experience start -->
       <div class="site-section">
         <div class="container">
-          
+          <h3 style="text-align:center; margin-bottom:50px; margin-top:-90px;">Explore Experiences</h3>
           <div class="row mb-3 align-items-stretch">
             <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
               <div class="h-entry">
