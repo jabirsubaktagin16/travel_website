@@ -70,6 +70,7 @@
               if($count > 0){
             ?>
                 <div class="h-entry">
+                <img src="<?php echo $row['Image']?>" alt="Image" class="img-fluid">
                   <p><?php echo $row['Description']?></p>
                 </div>
             <?php    

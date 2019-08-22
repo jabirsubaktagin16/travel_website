@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2019 at 12:45 PM
+-- Generation Time: Aug 22, 2019 at 01:17 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -37,6 +37,13 @@ CREATE TABLE `blogs` (
   `Tag` varchar(100) NOT NULL,
   `Date_Time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `blogs`
+--
+
+INSERT INTO `blogs` (`ID`, `UserID`, `Title`, `PlaceName`, `Description`, `Tag`, `Date_Time`) VALUES
+(1, 2, 'Dhaka Tour', 'Shishu Park', 'I visited Shishu Park in Dhaka City and it was an amazing tour', 'park', '2019-08-22 17:16:00');
 
 -- --------------------------------------------------------
 
@@ -280,7 +287,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `destination`
