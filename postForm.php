@@ -4,7 +4,8 @@
 	session_start();
     
     if(isset($_POST["post"])){
-		
+        $sql = "INSERT INTO blogs (UserID,	Title, PlaceName, Description, Tag, DateTime) VALUES ('".$_SESSION['ID'] ."', '".trim($_POST["title"])."', '".trim($_POST["place"])."', '".trim($_POST["description"])."', '".trim($_POST["tag"])."', '".date("M d, Y")." at ".date("h:i a")."')";
+        mysqli_query($link, $sql);
 
 	}    
     
@@ -86,7 +87,7 @@
                                             $result = mysqli_query($link, $sql);
 
                                             while($row = mysqli_fetch_array($result)) {
-                                                echo '<option value="new" >'.$row['Name'].'</option>';
+                                                echo '<option value="'.$row['Name'].'" >'.$row['Name'].'</option>';
                                             }
                                         ?>
 

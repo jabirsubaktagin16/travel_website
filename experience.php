@@ -50,11 +50,11 @@
       </div>  
 
       <!-- Add Experience Section -->
-      <div class="site-section border-top">
+      <div class="site-section border-top" style="margin-bottom:-50px;">
         <div class="container">
           <div class="row text-center">
-            <div class="col-md-12" style="display:flex; margin-top:0px;">
-              <h4 class="mb-5 text-black" style="margin-right:20px;">Add your travel experience</h4>
+            <div class="col-md-12" style="display:flex; padding-top:40px; background-color:#FAF9F8;">
+              <h5 class="mb-5 text-black" style="margin-right:20px;">Add your travel experience</h5>
               <?php if(isset($_SESSION['ID'])) {?>
                 <p style="margin-top:-7px;"><a href="postForm" class="btn btn-primary py-2 px-5 text-white">ADD</a></p>
               <?php } else {?>
@@ -68,65 +68,35 @@
       <!-- Post/Experience start -->
       <div class="site-section">
         <div class="container">
-          <h3 style="text-align:center; margin-bottom:50px; margin-top:-90px;">Explore Experiences</h3>
+          <h3 style="text-align:center; margin-bottom:50px; ">Explore Experiences</h3>
           <div class="row mb-3 align-items-stretch">
-            <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-              <div class="h-entry">
-                <img src="images/hero_bg_1.jpg" alt="Image" class="img-fluid">
-                <h2 class="font-size-regular"><a href="#">How to Plan Your Vacation</a></h2>
-                <div class="meta mb-4">by Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019 at 2:00 pm <span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-              </div> 
-            </div>
-            <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-              <div class="h-entry">
-                <img src="images/hero_bg_2.jpg" alt="Image" class="img-fluid">
-                <h2 class="font-size-regular"><a href="#">How to Plan Your Vacation</a></h2>
-                <div class="meta mb-4">by Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019 at 2:00 pm <span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-              </div>
-            </div>
+            <?php
+              $sql = "select * from blogs";
+              $result = mysqli_query($link, $sql);
 
-            <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-              <div class="h-entry">
-                <img src="images/hero_bg_2.jpg" alt="Image" class="img-fluid">
-                <h2 class="font-size-regular"><a href="#">How to Plan Your Vacation</a></h2>
-                <div class="meta mb-4">by Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019 at 2:00 pm <span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-              </div> 
-            </div>
-            <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-              <div class="h-entry">
-                <img src="images/hero_bg_1.jpg" alt="Image" class="img-fluid">
-                <h2 class="font-size-regular"><a href="#">How to Plan Your Vacation</a></h2>
-                <div class="meta mb-4">by Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019 at 2:00 pm <span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-              </div>
-            </div>
-            
-            <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-              <div class="h-entry">
-                <img src="images/hero_bg_1.jpg" alt="Image" class="img-fluid">
-                <h2 class="font-size-regular"><a href="#">How to Plan Your Vacation</a></h2>
-                <div class="meta mb-4">by Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019 at 2:00 pm <span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-              </div> 
-            </div>
-            <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-              <div class="h-entry">
-                <img src="images/hero_bg_2.jpg" alt="Image" class="img-fluid">
-                <h2 class="font-size-regular"><a href="#">How to Plan Your Vacation</a></h2>
-                <div class="meta mb-4">by Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019 at 2:00 pm <span class="mx-2">&bullet;</span> <a href="#">News</a></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-              </div>
-            </div>
-
+              while($row = mysqli_fetch_array($result)) {
+                $sql = "select FirstName, LastName from user where ID = ".$row['UserID'];
+                $result2 = mysqli_query($link, $sql);
+                $row2 = mysqli_fetch_array($result2)
+            ?>
+                <div class="col-md-6 col-lg-6 mb-4 mb-lg-4" style="padding-bottom:40px;">
+                  <div class="h-entry">
+                    <!-- <img src="images/hero_bg_1.jpg" alt="Image" class="img-fluid"> -->
+                    <h2 class="font-size-regular"><a href="post?eid=<?php echo $row['ID']?>"><?php echo $row['Title']?></a></h2>
+                    <div class="meta mb-4">by <?php echo $row2['FirstName']." ".$row2['LastName'] ?> <span class="mx-2">&bullet;</span> <?php echo $row['DateTime']?> <span class="mx-2">&bullet;</span> <a href="post?eid=<?php echo $row['ID']?>">View Details</a></div>
+                    <p><?php echo $row['Description']?></p>
+                  </div> 
+                </div>
+            <?php
+              }
+            ?>
           </div>
-          <div class="row">
+
+          <!-- <div class="row">
             <div class="col-12 text-center">
               <a href="#" class="btn btn-outline-primary border-2 py-3 px-5">Load More Posts...</a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
       <!-- Post/Experience end -->

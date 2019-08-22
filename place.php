@@ -70,7 +70,7 @@
               if($count > 0){
             ?>
                 <div class="h-entry">
-                  <p><?php echo $row['Description']?></p>
+                  <p style="text-align: justify;"><?php echo $row['Description']?></p>
                 </div>
             <?php    
                 
@@ -85,6 +85,8 @@
             ?>
           </div>
           <!-- About the place end-->
+          
+          <!-- peoples experience -->
           
 
           <div class="row">
