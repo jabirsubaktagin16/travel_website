@@ -96,11 +96,15 @@
         <?php include'zzz-header.php';?>
 
         <!-- cover/banner -->
-        <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/hero_bg_2.jpg);"
+        <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/hero_bg_3.jpg);"
             data-aos="fade" data-stellar-background-ratio="0.5">
             <div class="container">
                 <div class="row align-items-center justify-content-center text-center">
                     <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
+                        <h1 class="text-white font-weight-light">Sign In</h1>
+                        <div>
+                            <a href="index">Home</a> <span class="mx-2 text-white">&bullet;</span> <span
+                                class="text-white">Sign In</span>
                         <h1 class="text-white font-weight-light">Log In</h1>
                         <div>
                             <a href="index">Home</a> <span class="mx-2 text-white">&bullet;</span> <span
@@ -123,7 +127,7 @@
                             <div class="row form-group">
                                 <div class="col-md-6">
                                     <label class="text-black" for="phone">Phone / Email</label>
-                                    <input type="number" name="phoneEmail" id="phone" class="form-control" required>
+                                    <input type="text" name="phoneEmail" id="phone" class="form-control" required>
                                 </div>
                             </div>
                             <!-- Password -->

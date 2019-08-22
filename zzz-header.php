@@ -38,7 +38,7 @@
                         
                         <!-- <li><a href="discount">Discount</a></li> -->
                         <li><a href="experience">Experience</a></li>
-                        <li><a href="about">About</a></li>
+                        <li><a href="profile">Profile</a></li>
                         <li><a href="contact">Contact</a></li>
                         <!-- <li><a href="booking.html">Book Online</a></li> -->
                     </ul>

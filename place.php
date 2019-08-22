@@ -8,6 +8,17 @@
         $placeID = $_GET['placeID'];
     }
 
+    $sql = "SELECT * FROM place WHERE ID = ". $placeID;
+    $result = mysqli_query($link, $sql);
+    $row = mysqli_fetch_array($result);
+    $count = mysqli_num_rows($result);
+    $coverImgPath = '';
+
+// echo $row['Image']; die();
+
+    if($count > 0)$coverImgPath = $row['Image'];
+    else $coverImgPath = 'images/hero_bg_2.jpg';
+
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +53,7 @@
       <?php include'zzz-header.php';?>
     
       <!-- cover -->
-      <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover inner-page-cover" style="background-image: url(<?php echo $coverImgPath?>);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
@@ -62,10 +73,7 @@
           <!-- About the place start-->
           <div class="row mb-3 align-items-stretch">
             <?php
-              $sql = "SELECT * FROM place WHERE ID = ". $placeID;
-              $result = mysqli_query($link, $sql);
-              $row = mysqli_fetch_array($result);
-              $count = mysqli_num_rows($result);
+              
 
               if($count > 0){
             ?>
