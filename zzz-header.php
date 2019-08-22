@@ -38,7 +38,10 @@
                         
                         <!-- <li><a href="discount">Discount</a></li> -->
                         <li><a href="experience">Experience</a></li>
-                        <li><a href="profile">Profile</a></li>
+                        <?php 
+                        if(isset($_SESSION['ID'])){?>
+                            <li><a href="profile">Profile</a></li>
+                        <?php } ?>  
                         <li><a href="contact">Contact</a></li>
                         <!-- <li><a href="booking.html">Book Online</a></li> -->
                     </ul>
@@ -52,7 +55,7 @@
                             <?php if(!isset($_SESSION['ID'])) {?>
                                 <a href="login" class="pl-0 pr-3 text-black">Login / SignUp <span class="icon-user"></span></a>
                             <?php } else {?>
-                                <a href="logout" class="pl-0 pr-3 text-black">Logout <span class="icon-user"></span></a>
+                                <a href="logout" class="pl-0 pr-3 text-black">Logout<span class="icon-user"></span></a>
                             <?php } ?>
                         </li>
                     </ul>

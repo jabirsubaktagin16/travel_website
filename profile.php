@@ -77,7 +77,7 @@
                 <div class="h-entry">
                   <a href="blogs?postID=<?php echo $row['ID']?>&postName=<?php echo $row['Title']?>"></a>
                   <h2 class="font-size-regular"><a href="blog?postID=<?php echo $row['ID']?>&postName=<?php echo $row['Title']?>"><?php echo $row['Title']?></a></h2>
-                  <div class="meta mb-4">by <?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']?> <span class="mx-2">&bullet;</span> <?php echo $row['Date_Time'];?> <span class="mx-2">&bullet;</span> <a href="#"><?php echo $row['Tag'];?></a></div>
+                  <div class="meta mb-4">by <?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']?> <span class="mx-2">&bullet;</span> <?php echo $row['DateTime'];?> <span class="mx-2">&bullet;</span> <a href="#"><?php echo $row['Tag'];?></a></div>
                   <p><?php echo $row['Description']?></p>
                   </div> 
               </div>
