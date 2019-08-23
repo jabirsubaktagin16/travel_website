@@ -54,7 +54,8 @@
             </div>
           </div>
         </div>  
-   
+        
+        <?php if (isset($_SESSION['ID'])) {?>
         <!-- Post/Experience start -->
         <div class="site-section">
           <div class="container">
@@ -101,7 +102,8 @@
           </div>
         </div>
         <!-- Post/Experience end -->
-
+        <?php }?>
+        
         <!-- Footer area -->
         <?php include "zzz-footer.php";?>
         

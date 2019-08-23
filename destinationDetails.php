@@ -6,6 +6,15 @@
         $destName = $_GET['destName'];
         $destID = $_GET['destID'];
     }
+    // Checking URL
+    $sql = "SELECT Name FROM destination WHERE ID = ".$destID;
+    $result = mysqli_query($link, $sql);
+    $row = mysqli_fetch_array($result);
+    if( $row['Name'] != $destName ) {
+      echo 'Url is not correct';
+      die();
+    }
+
     $sql = "SELECT Image FROM destination WHERE ID = ".$destID;
     $result1 = mysqli_query($link, $sql);
     $count = mysqli_num_rows($result1);

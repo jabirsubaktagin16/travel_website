@@ -7,6 +7,15 @@
         $distName = $_GET['distName'];
         $distID = $_GET['distID'];
     }
+    // Checking URL
+    $sql = "SELECT Name FROM district WHERE ID = ".$distID;
+    $result = mysqli_query($link, $sql);
+    $row = mysqli_fetch_array($result);
+    if( $row['Name'] != $distName ) {
+      echo 'Url is not correct';
+      die();
+    }
+
     $sql = "SELECT * FROM district WHERE ID = ". $distID;
     $result = mysqli_query($link, $sql);
     $row = mysqli_fetch_array($result);

@@ -7,7 +7,16 @@
         $placeName = $_GET['placeName'];
         $placeID = $_GET['placeID'];
     }
+    // Checking URL
+    $sql = "SELECT Name FROM place WHERE ID = ".$placeID;
+    $result = mysqli_query($link, $sql);
+    $row = mysqli_fetch_array($result);
+    if( $row['Name'] != $placeName ) {
+      echo 'Url is not correct';
+      die();
+    }
 
+    // Taking image path from database for cover
     $sql = "SELECT * FROM place WHERE ID = ". $placeID;
     $result = mysqli_query($link, $sql);
     $count = mysqli_num_rows($result);
@@ -80,8 +89,7 @@
                 <div class="h-entry">
                   <p style="text-align: justify;"><?php echo $row['Description']?></p>
                 </div>
-            <?php    
-                
+            <?php
               } else {
                 echo '
                 <div class="col-12 text-center">
@@ -97,27 +105,33 @@
           <!-- peoples experience -->
           <div class="site-section">
             <div class="container">
-              <h3 style="text-align:center; margin-bottom:50px; ">Related Stories</h3>
-              <div class="row mb-3 align-items-stretch">
+              <?php
+                $sql = "SELECT * FROM blogs WHERE PlaceName=\"".$placeName."\"";
+                $res = mysqli_query($link, $sql);
+                $noOfData = mysqli_num_rows($res);
 
-                <?php
-                  $sql = "SELECT * FROM blogs WHERE PlaceName=\"".$placeName."\"";
-                  $res = mysqli_query($link, $sql);
-                  
-                  while($run = mysqli_fetch_array($res)){
-                ?>
-                    <div class="col-md-6 col-lg-6 mb-4 mb-lg-4" style="padding-bottom:40px;">
-                      <div class="h-entry">
-                        <!-- <img src="images/hero_bg_1.jpg" alt="Image" class="img-fluid"> -->
-                        <h2 class="font-size-regular"><a href="post?eid=<?php echo $run['ID']?>"><?php echo $run['Title']?></a></h2>
-                        <div class="meta mb-4"><?php echo $run['DateTime']?> <span class="mx-2">&bullet;</span> <a href="post?eid=<?php echo $row['ID']?>">View Details</a></div>
-                        <p><?php echo $run['Description']?></p>
-                      </div> 
-                    </div>
-                <?php
-                  }
-                ?>
-              </div>
+                if($noOfData > 0){
+              ?>
+                  <h3 style="text-align:center; margin-bottom:50px; ">Related Stories</h3>
+                  <div class="row mb-3 align-items-stretch">
+                    <?php
+                      while($run = mysqli_fetch_array($res)){
+                    ?>
+                        <div class="col-md-6 col-lg-6 mb-4 mb-lg-4" style="padding-bottom:40px;">
+                          <div class="h-entry">
+                            <!-- <img src="images/hero_bg_1.jpg" alt="Image" class="img-fluid"> -->
+                            <h2 class="font-size-regular"><a href="post?eid=<?php echo $run['ID']?>"><?php echo $run['Title']?></a></h2>
+                            <div class="meta mb-4"><?php echo $run['DateTime']?> <span class="mx-2">&bullet;</span> <a href="post?eid=<?php echo $row['ID']?>">View Details</a></div>
+                            <p><?php echo $run['Description']?></p>
+                          </div> 
+                        </div>
+                    <?php
+                      }
+                    ?>
+                  </div>
+              <?php 
+                }
+              ?>
             </div>
           </div>
           
