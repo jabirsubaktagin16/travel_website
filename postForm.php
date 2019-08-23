@@ -42,6 +42,13 @@
             echo '<script>alert("You can edit only your blogs")</script>';
         }
     }
+
+    //Delete Post
+    if(isset($_GET['delete'])){
+        $sql = "delete from blogs where ID=".$_GET['postID'];
+        mysqli_query($link, $sql);
+        header('Location: profile');
+    }
     
 ?>
 
