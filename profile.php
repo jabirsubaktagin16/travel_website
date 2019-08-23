@@ -54,7 +54,8 @@
             </div>
           </div>
         </div>  
-   
+        
+        <?php if (isset($_SESSION['ID'])) {?>
         <!-- Post/Experience start -->
         <div class="site-section">
           <div class="container">
@@ -77,7 +78,7 @@
                 <div class="h-entry">
                   <a href="blogs?postID=<?php echo $row['ID']?>&postName=<?php echo $row['Title']?>"></a>
                   <h2 class="font-size-regular"><a href="blog?postID=<?php echo $row['ID']?>&postName=<?php echo $row['Title']?>"><?php echo $row['Title']?></a></h2>
-                  <div class="meta mb-4">by <?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']?> <span class="mx-2">&bullet;</span> <?php echo $row['DateTime'];?> <span class="mx-2">&bullet;</span> <a href="edit_post?postID=<?php echo $row['ID']?>">Edit</a><span class="mx-2">&bullet;</span> <a href=#>Delete</a></div>
+                  <div class="meta mb-4">by <?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']?> <span class="mx-2">&bullet;</span> <?php echo $row['DateTime'];?> <span class="mx-2">&bullet;</span> <a href="postForm?edit=1&postID=<?php echo $row['ID']?>">Edit</a><span class="mx-2">&bullet;</span> <a href="postForm?delete=1&postID=<?php echo $row['ID']?>">Delete</a></div>
                   <p><?php echo $row['Description']?></p>
                   </div> 
               </div>
@@ -87,7 +88,7 @@
                 echo '
                 <div class="col-12 text-center">
                   <div class="h-entry">
-                    <h2 class="font-size-regular">Oh! No result found</h2><br>
+                    <h2 class="font-size-regular">You have not written any blogs.</h2><br>
                   </div>
                 </div>';
               }
@@ -101,12 +102,13 @@
           </div>
         </div>
         <!-- Post/Experience end -->
-
+        <?php }?>
+        
         <!-- Footer area -->
         <?php include "zzz-footer.php";?>
         
       </div>
-
+      
       <script src="js/jquery-3.3.1.min.js"></script>
       <script src="js/jquery-migrate-3.0.1.min.js"></script>
       <script src="js/jquery-ui.js"></script>
