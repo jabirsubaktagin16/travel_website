@@ -41,7 +41,7 @@
               <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
                 <h1 class="text-white font-weight-light"><?php
                     if( isset($_SESSION['ID'])) {
-                      echo $_SESSION['firstname'].' '.$_SESSION['lastname'];
+                      echo 'Hi, '. $_SESSION['firstname'].' '.$_SESSION['lastname'];
                       }
                     else{
                       echo "Please Login To View Your Profile";
@@ -68,7 +68,7 @@
                 ?>
                 <div class="col-12 text-center">
                   <div class='h-entry'>
-                    <h2 class="font-size-regular">Posts By <?php echo $_SESSION['firstname'].' '.$_SESSION['lastname'];?></h2><br>
+                    <h3 class="font-size-regular">Your Posts</h3><br>
                   </div>
                 </div>
                 <?php
@@ -77,7 +77,7 @@
                 <div class="h-entry">
                   <a href="blogs?postID=<?php echo $row['ID']?>&postName=<?php echo $row['Title']?>"></a>
                   <h2 class="font-size-regular"><a href="blog?postID=<?php echo $row['ID']?>&postName=<?php echo $row['Title']?>"><?php echo $row['Title']?></a></h2>
-                  <div class="meta mb-4">by <?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']?> <span class="mx-2">&bullet;</span> <?php echo $row['DateTime'];?> <span class="mx-2">&bullet;</span> <a href="#"><?php echo $row['Tag'];?></a></div>
+                  <div class="meta mb-4">by <?php echo $_SESSION['firstname'].' '.$_SESSION['lastname']?> <span class="mx-2">&bullet;</span> <?php echo $row['DateTime'];?> <span class="mx-2">&bullet;</span> <a href="edit_post?postID=<?php echo $row['ID']?>">Edit</a><span class="mx-2">&bullet;</span> <a href=#>Delete</a></div>
                   <p><?php echo $row['Description']?></p>
                   </div> 
               </div>

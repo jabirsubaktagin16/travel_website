@@ -2,10 +2,12 @@
     include "zzz-dbConnect.php"; 
     
 	session_start();
-    
+    if( isset($_GET['postID']) ){
+        $postID = $_GET['postID'];
+    }
     if(isset($_POST["post"])){
         date_default_timezone_set('Asia/Dhaka');
-        $sql = "INSERT INTO blogs (UserID,	Title, PlaceName, Description, Tag, DateTime) VALUES ('".$_SESSION['ID'] ."', '".trim($_POST["title"])."', '".trim($_POST["place"])."', '".trim($_POST["description"])."', '".trim($_POST["tag"])."', '".date("M d, Y")." at ".date("h:i a")."')";
+        $sql ="UPDATE blogs SET Title='".trim($_POST['title'])."',PlaceName='".trim($_POST['place'])."',Description='".trim($_POST['description'])."',Tag='".trim($_POST['tag'])."' WHERE ID=". $postID;
         mysqli_query($link, $sql);
 
 	}    
@@ -51,7 +53,7 @@
             <div class="container">
                 <div class="row align-items-center justify-content-center text-center">
                     <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-                        <h1 class="text-white font-weight-light">Share Your Story</h1>
+                        <h1 class="text-white font-weight-light">Edit Your Story</h1>
                         <div>
                             <a href="index">Home</a> <span class="mx-2 text-white">&bullet;</span> <span
                                 class="text-white">Story</span>
@@ -70,10 +72,17 @@
                         <!-- Form -->
                         <form class="p-5 bg-white" method="POST">
                             <!-- tile -->
+                            <?php
+                                    $sql2 = "SELECT * FROM blogs WHERE ID = ". $postID;
+                                    $result2 = mysqli_query($link, $sql2);
+                                    $count=mysqli_num_rows($result2);
+                                    $row = mysqli_fetch_array($result2);
+                                    if($count > 0){
+                            ?>
                             <div class="row form-group">
                                 <div class="col-md-12 mb-3 mb-md-0">
                                     <label class="text-black" for="title">Title</label>
-                                    <input type="text" name="title" id="title" class="form-control" required>
+                                    <input type="text" name="title" id="title" class="form-control" value="<?php echo $row['Title']?>">
                                 </div>
                             </div>
                             <!-- place location -->
@@ -81,7 +90,7 @@
                                 <div class="col-md-6">
                                     <label class="text-black" for="place">Place</label> <br>
                                     <select class="select" name="place" id="place" required>
-                                        <option value="" disabled selected>Select Status</option>
+                                        <option value=""disabled selected>Select Your Status</option>
                                         
                                         <?php
                                             $sql = "SELECT ID, Name FROM place";
@@ -95,24 +104,37 @@
                                     </select>
                                 </div>
                             </div>
+                            <?php
+                            }
+                            ?>
                             <!-- description -->
+                            <?php
+                                    $sql2 = "SELECT * FROM blogs WHERE ID = ". $postID;
+                                    $result2 = mysqli_query($link, $sql2);
+                                    $count=mysqli_num_rows($result2);
+                                    $row = mysqli_fetch_array($result2);
+                                    if($count > 0){
+                            ?>
                             <div class="row form-group">
                                 <div class="col-md-12">
                                     <label class="text-black" for="description">Description</label>
-                                    <textarea rows="8" cols="50" name="description" id="description" class="form-control" placeholder="Tell us about your story of journey..." required></textarea>
+                                    <textarea rows="8" cols="50" name="description" id="description" class="form-control" ><?php echo $row['Description']?></textarea>
                                 </div>
                             </div>
                             <!-- tags -->
                             <div class="row form-group">
                                 <div class="col-md-12">
                                     <label class="text-black" for="tag">Tags</label>
-                                    <input type="text" name="tag" id="tag" class="form-control" placeholder="Waterfall, Hill, etc." required>
+                                    <input type="text" name="tag" id="tag" class="form-control" value="<?php echo $row['Tag']?>">
                                 </div>
                             </div>
+                            <?php
+                                }
+                            ?>
                             <!-- Button -->
                             <div class="row form-group">
                                 <div class="col-md-12" style="text-align:center; margin-top:20px;">
-                                    <input type="submit" name="post" value="Post" class="btn btn-primary py-2 px-4 text-white">
+                                    <input type="submit" name="post" value="Update" class="btn btn-primary py-2 px-4 text-white">
                                 </div>
                             </div>
                         </form>

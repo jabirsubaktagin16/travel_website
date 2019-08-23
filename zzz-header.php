@@ -55,7 +55,7 @@
                             <?php if(!isset($_SESSION['ID'])) {?>
                                 <a href="login" class="pl-0 pr-3 text-black">Login / SignUp <span class="icon-user"></span></a>
                             <?php } else {?>
-                                <a href="logout" class="pl-0 pr-3 text-black">Logout<span class="icon-user"></span></a>
+                                <a href="logout" class="pl-0 pr-3 text-black">Logout <span class="icon-user"></span></a>
                             <?php } ?>
                         </li>
                     </ul>

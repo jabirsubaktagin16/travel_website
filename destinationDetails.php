@@ -6,6 +6,13 @@
         $destName = $_GET['destName'];
         $destID = $_GET['destID'];
     }
+    $sql = "SELECT Image FROM destination WHERE ID = ".$destID;
+    $result1 = mysqli_query($link, $sql);
+    $count = mysqli_num_rows($result1);
+    $row1 = mysqli_fetch_array($result1);
+
+    if($count > 0) $coverImg = $row1['Image'];
+    else $coverImg = 'images/hero_bg_2.jpg';
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +47,7 @@
       <?php include'zzz-header.php';?>
     
       <!-- Slider cover -->
-      <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover inner-page-cover" style="background-image: url(<?php echo $coverImg?>);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
