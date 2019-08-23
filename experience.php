@@ -58,7 +58,7 @@
               <?php if(isset($_SESSION['ID'])) {?>
                 <p style="margin-top:-7px;"><a href="postForm" class="btn btn-primary py-2 px-5 text-white">ADD</a></p>
               <?php } else {?>
-                  <p style="margin-top:-7px;"><a onclick="alert('Login first!');" class="btn btn-primary py-2 px-5 text-white">ADD</a></p>
+                  <p style="margin-top:-7px;"><a href ="login" onclick="alert('Login first!');" class="btn btn-primary py-2 px-5 text-white">ADD</a></p>
               <?php }?>
             </div>
           </div>

@@ -39,7 +39,7 @@
 
       <!-- slider -->
       <div class="slide-one-item home-slider owl-carousel">
-        <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="site-blocks-cover overlay" style="background-image: url(images/index_cover_1.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
           <div class="container">
             <div class="row align-items-center justify-content-center text-center">
               <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
@@ -50,7 +50,7 @@
           </div>
         </div>
 
-        <div class="site-blocks-cover overlay" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+        <div class="site-blocks-cover overlay" style="background-image: url(images/index_cover_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
           <div class="container">
             <div class="row align-items-center justify-content-center text-center">
               <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
@@ -69,7 +69,7 @@
           <div class="row">
             
             <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-              <a href="#" class="unit-1 text-center">
+              <a href="experience" class="unit-1 text-center">
                 <img src="images/img_2.jpg" alt="Image" class="img-fluid">
                 <div class="unit-1-text">
                   <h3 class="unit-1-heading">Write Down Your Experience</h3>
@@ -96,53 +96,6 @@
           </div>
         </div>
       </div>
-
-      <!-- Packege -->
-      <div class="site-section">
-        <div class="container">
-          <div class="row align-items-stretch">
-            
-            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-              <div class="unit-4 d-flex">
-                <div class="unit-4-icon mr-4">
-                  <span class="text-primary flaticon-airplane"></span>
-                </div>
-                <div>
-                  <h3>Air Ticketing</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi
-                    at.</p>
-                  <p><a href="#">Learn More</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-              <div class="unit-4 d-flex">
-                <div class="unit-4-icon mr-4">
-                  <span class="text-primary flaticon-ship"></span>
-                </div>
-                <div>
-                  <h3>Cruises</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
-                  <p><a href="#">Learn More</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-              <div class="unit-4 d-flex">
-                <div class="unit-4-icon mr-4"><span class="text-primary flaticon-route"></span></div>
-                <div>
-                  <h3>Tour Packages</h3>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi
-                    at.</p>
-                  <p><a href="#">Learn More</a></p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
       <!-- Testimonials -->
       <div class="site-section block-13 bg-light">
         <div class="container">
@@ -249,32 +202,9 @@
               <p class="color-black-opacity-5">See Our Daily News &amp; Updates</p>
             </div>
           </div>
-          
-          <div class="row mb-3 align-items-stretch">
-            <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-              <div class="h-entry">
-                <img src="images/hero_bg_1.jpg" alt="Image" class="img-fluid">
-                <h2 class="font-size-regular"><a href="#">How to Plan Your Vacation</a></h2>
-                <div class="meta mb-4">by Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019 at 2:00 pm <span
-                    class="mx-2">&bullet;</span> <a href="#">News</a></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente
-                  veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-              </div>
-            </div>
-            <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
-              <div class="h-entry">
-                <img src="images/hero_bg_2.jpg" alt="Image" class="img-fluid">
-                <h2 class="font-size-regular"><a href="#">How to Plan Your Vacation</a></h2>
-                <div class="meta mb-4">by Theresa Winston <span class="mx-2">&bullet;</span> Jan 18, 2019 at 2:00 pm <span
-                    class="mx-2">&bullet;</span> <a href="#">News</a></div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus eligendi nobis ea maiores sapiente
-                  veritatis reprehenderit suscipit quaerat rerum voluptatibus a eius.</p>
-              </div>
-            </div>
-          </div>
           <div class="row">
             <div class="col-12 text-center">
-              <a href="#" class="btn btn-outline-primary border-2 py-3 px-5">View All Blog Posts</a>
+              <a href="experience" class="btn btn-outline-primary border-2 py-3 px-5">View All Blog Posts</a>
             </div>
           </div>
         </div>

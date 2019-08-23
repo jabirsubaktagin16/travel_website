@@ -34,11 +34,11 @@
       <?php include'zzz-header.php';?>
 
       <!-- cover -->
-      <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/hero_bg_2.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
+      <div class="site-blocks-cover inner-page-cover" style="background-image: url(images/about.jpg);" data-aos="fade" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-              <h1 class="text-white font-weight-light">About Travelers</h1>
+              <h1 class="text-white font-weight-light">About Vromon Bangladesh</h1>
               <div>
                 <a href="index">Home</a> <span class="mx-2 text-white">&bullet;</span> <span class="text-white">About</span>
               </div>
@@ -48,7 +48,7 @@
       </div>  
 
       <!-- About Company -->
-      <div class="site-section" data-aos="fade-up">
+      <!--<div class="site-section" data-aos="fade-up">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-md-6 mb-5 mb-md-0">
@@ -67,7 +67,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div>-->
 
       <!-- Our team details -->
       <div class="site-section">
@@ -167,7 +167,7 @@
         </div>
       </div>
 
-      <!-- booking Section -->
+      <!-- booking Section 
       <div class="site-section border-top">
         <div class="container">
           <div class="row text-center">
@@ -177,7 +177,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
       
       <!-- Footer area -->
       <?php include "zzz-footer.php";?>
