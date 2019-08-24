@@ -62,7 +62,7 @@
         <div class="container">
           <div class="row align-items-center justify-content-center text-center">
             <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
-              <h1 class="text-white font-weight-light">Places in <?php echo $distName;?></h1>
+              <h1 class="text-white font-weight-light"><?php echo $distName;?></h1>
               <div>
                 <a href="index">Home</a> <span class="mx-2 text-white">&bullet;</span> <span class="text-white">Places</span>
               </div>
@@ -74,7 +74,19 @@
       <div class="site-section">
         <div class="container">
           <div class="row mb-3 align-items-stretch">
-            
+            <?php
+              $sql = "SELECT * FROM district WHERE ID = ". $distID;
+              $result = mysqli_query($link, $sql);
+              $count = mysqli_num_rows($result);
+              $row = mysqli_fetch_array($result);
+              
+              if($count > 0){
+            ?>
+                <div class="h-entry">
+                  <?php echo $row['Description']?>
+                </div>
+            <?php
+              }?>
             <?php
               $sql = "SELECT * FROM place WHERE DistrictID = ". $distID;
               $result = mysqli_query($link, $sql);
