@@ -2,6 +2,11 @@
     include "zzz-dbConnect.php"; 
     session_start();
 
+    //Search bar
+    if (isset($_POST['searchSubmit']))
+    {
+        header('Location: result?keyword='.$_POST['keyword']);
+    }
   ?>
 
 <!DOCTYPE html>
@@ -48,6 +53,16 @@
           </div>
         </div>
       </div>  
+
+      <!-- Search Bar Start  -->
+      <div class="layer-4" style="text-align:center; margin-top:77px;">
+        <form class="title-4" method="post">
+          <input style="border:1px solid; border-radius-left:20px; border-color:#ef6c57;" type="text" name="keyword" placeholder="Enter your keyword (Place, tag, etc)" required>
+          <button type="submit" name="searchSubmit"><i class="icon-search" style="color:#ef6c57;"></i></button>
+          <p style="margin-top:10px;">You can also <a href="contact">leave a message </a>with your required ask</p>
+        </form>
+      </div>
+      <!-- Search Bar End -->
 
       <!-- Add Experience Section -->
       <div class="site-section border-top" style="margin-bottom:-50px;">

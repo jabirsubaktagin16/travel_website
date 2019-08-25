@@ -24,6 +24,25 @@
 
     if($count > 0)$coverImgPath = $row['Image'];
     else $coverImgPath = 'images/hero_bg_2.jpg';
+
+    //Taking Comment
+    if(isset($_POST['commentButton'])){
+      if(isset($_SESSION['ID'])){
+        date_default_timezone_set('Asia/Dhaka');
+        $sql = "INSERT INTO comment (UserID, Text, DateTime) VALUES ('".$_SESSION['ID'] ."', '".trim($_POST["comment"])."', '".date("M d, Y")." at ".date("h:i a")."')";
+        mysqli_query($link, $sql);
+
+      }
+      else {
+        echo "<script>
+                if (confirm('Please login first. Do you want to login?')) {
+                  window.location = 'login';
+                }
+              </script>";
+      }
+    }
+    
+
     
 ?>
 
@@ -135,6 +154,44 @@
             </div>
           </div>
           
+          <!-- Comment section -->
+          <div class="col-md-12">
+            <p>Comments about the place</p>
+
+            <form method="POST">
+              <div style="display:flex;">
+                <div class="row form-group col-md-11">
+                  <input class="form-control" type="text" name="comment" placeholder="Your comments" />
+                </div>
+                <div class="form-group col-md-1">
+                  <button class="btn btn-default" name="commentButton" style="padding:8px; width:100%;">Add</button>
+                </div>
+              </div>
+            </form>
+
+            <div class="actionBox">
+              <?php 
+                $sql = 'SELECT * from comment WHERE PlaceID = '.$_GET['placeID'];
+                $result = mysqli_query($link, $sql);
+
+                while($row = mysqli_fetch_array($result)){
+              ?>
+                  <ul>
+                    <li>
+                      <div class="commenterImage">
+                        <span class="icon-user"></span>
+                      </div>
+                      <div class="commentText">
+                        <p class=""><?php echo $row['Text']?></p> <span class="date sub-text"><?php echo $row['DateTime']?></span>
+                      </div>
+                    </li>
+                  </ul>
+              <?php 
+                }?>
+            </div>
+          </div>
+
+          <!-- Booking button -->
           <div class="row">
             <div class="col-12 text-center">
               <!-- <a href="#" class="btn btn-outline-primary border-2 py-3 px-5">Load More Posts...</a> -->

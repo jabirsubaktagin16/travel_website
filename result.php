@@ -99,7 +99,7 @@
               } 
 
               //Showing Places
-              $sql = "SELECT * FROM place WHERE Name LIKE '%$keyword%' or Description LIKE '%$keyword%' or Tag LIKE '%$keyword%' or Location Like '%$keyword%'";
+              $sql = "SELECT * FROM place WHERE Name LIKE '%$keyword%' or Tag LIKE '%$keyword%' or Location Like '%$keyword%'";
               $result = mysqli_query($link, $sql);
               $count = mysqli_num_rows($result);
               $totalRes += $count;
@@ -107,7 +107,32 @@
               if($count > 0){
                 echo '<div class="col-12 text-center">
                   <div class="h-entry">
-                    <h2 class="font-size-regular" style="margin-top:60px;">Place Found</h2><br>
+                    <h2 class="font-size-regular" >Place Found</h2><br>
+                  </div>
+                </div>';
+                
+                while($row = mysqli_fetch_array($result)) { ?>
+                  <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
+                    <div class="h-entry">
+                      <a href="place?placeID=<?php echo $row['ID']?>&placeName=<?php echo $row['Name']?>"><img src="<?php echo $row['Image']?>" alt="Image" class="img-fluid"></a>
+                      <h2 class="font-size-regular"><a href="place?placeID=<?php echo $row['ID']?>&placeName=<?php echo $row['Name']?>"><?php echo $row['Name']?></a></h2>
+                      <p><?php echo $row['Location']?></p>
+                    </div> 
+                  </div>
+            <?php    
+                }
+              } 
+
+              //Showing Experience
+              $sql = "SELECT * FROM blogs WHERE Title LIKE '%$keyword%' or PlaceName LIKE '%$keyword%' or Tag LIKE '%$keyword%'";
+              $result = mysqli_query($link, $sql);
+              $count = mysqli_num_rows($result);
+              $totalRes += $count;
+
+              if($count > 0){
+                echo '<div class="col-12 text-center">
+                  <div class="h-entry">
+                    <h2 class="font-size-regular" >Place Found</h2><br>
                   </div>
                 </div>';
                 
