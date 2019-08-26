@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 24, 2019 at 02:18 PM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Generation Time: Aug 26, 2019 at 05:15 PM
+-- Server version: 10.1.36-MariaDB
+-- PHP Version: 5.6.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,6 +44,27 @@ CREATE TABLE `blogs` (
 
 INSERT INTO `blogs` (`ID`, `UserID`, `Title`, `PlaceName`, `Description`, `Tag`, `DateTime`) VALUES
 (1, 2, 'Shishu Park Tour', 'Shaheed Minar', 'I visited Shishu Park in Dhaka City and it was an amazing tour. The rides are quite good', 'park', 'Aug 22, 2019 at 05:16 pm');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comment`
+--
+
+CREATE TABLE `comment` (
+  `ID` int(11) NOT NULL,
+  `UserID` int(11) NOT NULL,
+  `PlaceID` int(11) NOT NULL,
+  `Text` text NOT NULL,
+  `DateTime` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `comment`
+--
+
+INSERT INTO `comment` (`ID`, `UserID`, `PlaceID`, `Text`, `DateTime`) VALUES
+(1, 2, 55, 'Hello', 'Aug 26, 2019 at 12:23 am');
 
 -- --------------------------------------------------------
 
@@ -291,6 +312,12 @@ ALTER TABLE `blogs`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `comment`
+--
+ALTER TABLE `comment`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `destination`
 --
 ALTER TABLE `destination`
@@ -322,6 +349,12 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `comment`
+--
+ALTER TABLE `comment`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
