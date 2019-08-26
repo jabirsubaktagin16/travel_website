@@ -140,7 +140,7 @@
                   <div class="col-md-6 col-lg-6 mb-4 mb-lg-4" style="padding-bottom:40px;">
                   <div class="h-entry">
                     <!-- <img src="images/hero_bg_1.jpg" alt="Image" class="img-fluid"> -->
-                    <h2 class="font-size-regular"><a href="post?eid=<?php echo $row['ID']?>"><?php echo $row['Title']?></a></h2>
+                    <h2 class="font-size-regular"><a href="post?eid=<?php echo $row['ID']?>&postTitle=<?php echo $row['Title']?>"><?php echo $row['Title']?></a></h2>
                     <div class="meta mb-4"><?php echo $row['DateTime']?> <span class="mx-2">&bullet;</span> <a href="post?eid=<?php echo $row['ID']?>">View Details</a></div>
                     <p><?php echo $row['Description']?></p>
                   </div> 

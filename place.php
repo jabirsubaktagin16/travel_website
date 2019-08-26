@@ -174,7 +174,7 @@
                 $sql = 'SELECT * from comment WHERE PlaceID = '.$_GET['placeID'];
                 $result = mysqli_query($link, $sql);
 
-                while($row = mysqli_fetch_array($result)){
+              while($row = mysqli_fetch_array($result)){
               ?>
                   <ul>
                     <li>

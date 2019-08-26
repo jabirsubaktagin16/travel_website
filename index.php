@@ -44,7 +44,7 @@
             <div class="row align-items-center justify-content-center text-center">
               <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
                 <h1 class="text-white font-weight-light">Never Stop Exploring</h1>
-                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga est inventore ducimus repudiandae.</p>
+                <p class="mb-5">TRAVEL DOESN'T BECOME ADVENTURE UNTIL YOU LEAVE YOURSELF BEHIND</p>
               </div>
             </div>
           </div>
@@ -55,8 +55,7 @@
             <div class="row align-items-center justify-content-center text-center">
               <div class="col-md-8" data-aos="fade-up" data-aos-delay="400">
                 <h1 class="text-white font-weight-light">Love The Places</h1>
-                <p class="mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga est inventore ducimus
-                  repudiandae.</p>
+                <p class="mb-5">CLIMB THE MOUNTAIN SO YOU CAN SEE THE WORLD, NOT SO THE WORLD CAN SEE YOU</p>
               </div>
             </div>
           </div>
@@ -77,10 +76,10 @@
               </a>
             </div>
             <div class="col-md-6 col-lg-4 mb-4 mb-lg-0">
-              <a href="#" class="unit-1 text-center">
+              <a href="destination" class="unit-1 text-center">
                 <img src="images/img_1.jpg" alt="Image" class="img-fluid">
                 <div class="unit-1-text">
-                  <h3 class="unit-1-heading">Explore Asian Mountains</h3>
+                  <h3 class="unit-1-heading">Explore Bangladesh</h3>
                 </div>
               </a>
             </div>
@@ -88,7 +87,7 @@
               <a href="#" class="unit-1 text-center">
                 <img src="images/img_3.jpg" alt="Image" class="img-fluid">
                 <div class="unit-1-text">
-                  <h3 class="unit-1-heading">Safe Trip With Airasia</h3>
+                  <h3 class="unit-1-heading">Guide to Visit Places</h3>
                 </div>
               </a>
             </div>
@@ -114,10 +113,8 @@
                     <img src="images/img_1.jpg" alt="Image" class="img-md-fluid">
                   </div>
                   <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
-                    <p class="text-black lead">&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique
-                      dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam!
-                      Fugiat odio nam eveniet ipsam atque, corrupti porro&rdquo;</p>
-                    <p class="">&mdash; <em>James Martin</em>, <a href="#">Traveler</a></p>
+                    <p class="text-black lead">&ldquo;I would rather own a little and see the world than own the world and see a little of it&rdquo;</p>
+                    <p class="">&mdash; <em>Alexander Sattler</em></p>
                   </div>
                 </div>
               </div>
@@ -129,10 +126,8 @@
                     <img src="images/img_2.jpg" alt="Image" class="img-md-fluid">
                   </div>
                   <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
-                    <p class="text-black lead">&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique
-                      dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam!
-                      Fugiat odio nam eveniet ipsam atque, corrupti porro&rdquo;</p>
-                    <p class="">&mdash; <em>Clair Augustin</em>, <a href="#">Traveler</a></p>
+                    <p class="text-black lead">&ldquo;It is better to see something once than to hear about it a thousand times&rdquo;</p>
+                    <p class="">&mdash; <em>Asian Proverb</em></p>
                   </div>
                 </div>
               </div>
@@ -144,10 +139,8 @@
                     <img src="images/img_4.jpg" alt="Image" class="img-md-fluid">
                   </div>
                   <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
-                    <p class="text-black lead">&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique
-                      dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam!
-                      Fugiat odio nam eveniet ipsam atque, corrupti porro&rdquo;</p>
-                    <p class="">&mdash; <em>James Martin</em>, <a href="#">Traveler</a></p>
+                    <p class="text-black lead">&ldquo;The real voyage of discovery consists not in seeking new landscapes, but having new eyes&rdquo;</p>
+                    <p class="">&mdash; <em>Marcel Proust</em></p>
                   </div>
                 </div>
               </div>
@@ -198,14 +191,30 @@
           
           <div class="row justify-content-center mb-5">
             <div class="col-md-7 text-center">
-              <h2 class="font-weight-light text-black">Our Blog</h2>
-              <p class="color-black-opacity-5">See Our Daily News &amp; Updates</p>
+              <h2 class="font-weight-light text-black">Popular Districts in Bangladesh</h2>
             </div>
           </div>
           <div class="row">
-            <div class="col-12 text-center">
-              <a href="experience" class="btn btn-outline-primary border-2 py-3 px-5">View All Blog Posts</a>
-            </div>
+            <?php
+              $sql = "SELECT * FROM district LIMIT 6";
+              $result = mysqli_query($link, $sql);
+              $count = mysqli_num_rows($result);
+
+              if($count > 0){
+            ?>              
+            <?php
+                while($row = mysqli_fetch_array($result)) { ?>
+                  
+                  <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
+                    <div class="h-entry">
+                      <a href="placeList?distID=<?php echo $row['ID']?>&distName=<?php echo $row['Name']?>"><img src="<?php echo $row['Image']?>" alt="Image" class="img-fluid"></a>
+                      <h2 class="font-size-regular text-center"><a href="placeList?distID=<?php echo $row['ID']?>&distName=<?php echo $row['Name']?>"><?php echo $row['Name']?></a></h2>
+                    </div> 
+                  </div>
+            
+              <?php    
+                }
+              }?>
           </div>
         </div>
       </div>

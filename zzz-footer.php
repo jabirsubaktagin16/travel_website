@@ -4,7 +4,7 @@
           <div class="col-lg-6">
             <div class="mb-5">
               <h3 class="footer-heading mb-4">About Vromon BD</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe pariatur reprehenderit vero atque, consequatur id ratione, et non dignissimos culpa? Ut veritatis, quos illum totam quis blanditiis, minima minus odio!</p>
+              <p>Vromon BD searches multiple types of information from multiple sources to generate optimal results. In just one overview, you are able to get web pages, videos, news, products and results seen from Wikipedia. This enables you to obtain a clearer and complete picture of what the web has to offer. With one entry you search for the answer in the worlds largest search sources and therefore get better and more results! </p>
             </div>
             
           </div>
@@ -56,7 +56,7 @@
 
             <p>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This is made with <i class="icon-heart-o" aria-hidden="true"></i> by <a href="https://google.com" target="_blank" >Team Trek</a>
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | by <a href="https://google.com" target="_blank" >Team Trek</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             </p>
           </div>

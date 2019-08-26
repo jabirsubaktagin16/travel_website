@@ -62,7 +62,7 @@
             
             <div class="row mb-3 align-items-stretch">
               <?php
-              $sql="SELECT * FROM blogs WHERE UserID = ". $_SESSION['ID'];
+              $sql="SELECT * FROM blogs WHERE UserID = ". $_SESSION['ID']." ORDER BY ID DESC";
               $result= mysqli_query($link, $sql);
               $count = mysqli_num_rows($result);
               if($count>0){

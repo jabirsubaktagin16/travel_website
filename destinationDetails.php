@@ -91,7 +91,7 @@
           <div class="row mb-3 align-items-stretch">
             
             <?php
-              $sql = "SELECT * FROM district WHERE DestinationID = ". $destID;
+              $sql = "SELECT * FROM district WHERE DestinationID = ". $destID." ORDER BY Name ASC ";
               $result = mysqli_query($link, $sql);
               $count = mysqli_num_rows($result);
 
@@ -109,7 +109,7 @@
                   <div class="col-md-6 col-lg-6 mb-4 mb-lg-4">
                     <div class="h-entry">
                       <a href="placeList?distID=<?php echo $row['ID']?>&distName=<?php echo $row['Name']?>"><img src="<?php echo $row['Image']?>" alt="Image" class="img-fluid"></a>
-                      <h2 class="font-size-regular"><a href="placeList?distID=<?php echo $row['ID']?>&distName=<?php echo $row['Name']?>"><?php echo $row['Name']?></a></h2>
+                      <h2 class="font-size-regular text-center"><a href="placeList?distID=<?php echo $row['ID']?>&distName=<?php echo $row['Name']?>"><?php echo $row['Name']?></a></h2>
                     </div> 
                   </div>
             

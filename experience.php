@@ -86,7 +86,7 @@
           <h3 style="text-align:center; margin-bottom:50px; ">Explore Experiences</h3>
           <div class="row mb-3 align-items-stretch">
             <?php
-              $sql = "select * from blogs";
+              $sql = "SELECT * FROM blogs ORDER BY ID DESC";
               $result = mysqli_query($link, $sql);
 
               while($row = mysqli_fetch_array($result)) {
@@ -97,8 +97,8 @@
                 <div class="col-md-6 col-lg-6 mb-4 mb-lg-4" style="padding-bottom:40px;">
                   <div class="h-entry">
                     <!-- <img src="images/hero_bg_1.jpg" alt="Image" class="img-fluid"> -->
-                    <h2 class="font-size-regular"><a href="post?eid=<?php echo $row['ID']?>"><?php echo $row['Title']?></a></h2>
-                    <div class="meta mb-4">by <?php echo $row2['FirstName']." ".$row2['LastName'] ?> <span class="mx-2">&bullet;</span> <?php echo $row['DateTime']?> <span class="mx-2">&bullet;</span> <a href="post?eid=<?php echo $row['ID']?>">View Details</a></div>
+                    <h2 class="font-size-regular"><a href="post?eid=<?php echo $row['ID']?>&postTitle=<?php echo $row['Title']?>"><?php echo $row['Title']?></a></h2>
+                    <div class="meta mb-4">by <?php echo $row2['FirstName']." ".$row2['LastName'] ?> <span class="mx-2">&bullet;</span> <?php echo $row['DateTime']?> <span class="mx-2">&bullet;</span> <a href="post?eid=<?php echo $row['ID']?>&postTitle=<?php echo $row['Title']?>">View Details</a></div>
                     <p><?php echo $row['Description']?></p>
                   </div> 
                 </div>

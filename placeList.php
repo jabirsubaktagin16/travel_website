@@ -88,7 +88,7 @@
             <?php
               }?>
             <?php
-              $sql = "SELECT * FROM place WHERE DistrictID = ". $distID;
+              $sql = "SELECT * FROM place WHERE DistrictID = ". $distID." ORDER BY place.Name ASC";
               $result = mysqli_query($link, $sql);
               $count = mysqli_num_rows($result);
 
@@ -113,13 +113,6 @@
             
               <?php    
                 }
-              } else {
-                echo '
-                <div class="col-12 text-center">
-                  <div class="h-entry">
-                    <h2 class="font-size-regular">Oh! No result found</h2><br>
-                  </div>
-                </div>';
               }
               ?>
           </div>

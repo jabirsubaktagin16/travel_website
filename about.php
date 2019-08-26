@@ -82,7 +82,7 @@
             <div class="col-md-6 col-lg-4 text-center mb-5" data-aos="fade-up">
               <img src="images/ourTeam/person_1.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
               <h2 class="text-black font-weight-light mb-4">Mir Arif Hasan</h2>
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ab quas facilis obcaecati non ea, est odit repellat distinctio incidunt, quia aliquam eveniet quod deleniti impedit sapiente atque tenetur porro?</p>
+              <p class="mb-4">Hi, this is Arif. I am interested in cloud services and wants to work in ML, AI, NLP etc. Technology always attracts my mind.</p>
               <p>
                 <a href="https://github.com/mirarifhasan" class="pl-0 pr-3"><span class="icon-github"></span></a>
                 <a href="https://www.linkedin.com/in/mirarifhasan/" class="pl-3 pr-3"><span class="icon-linkedin"></span></a>
@@ -92,7 +92,7 @@
             <div class="col-md-6 col-lg-4 text-center mb-5" data-aos="fade-up">
               <img src="images/ourTeam/person_2.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
               <h2 class="text-black font-weight-light mb-4">Ahmad Subaktagin Jabir</h2>
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ab quas facilis obcaecati non ea, est odit repellat distinctio incidunt, quia aliquam eveniet quod deleniti impedit sapiente atque tenetur porro?</p>
+              <p class="mb-4">Hi, this is Jabir. I am interested in User Interface and Database. I think technology is a tool that made our life easier.</p>
               <p>
                 <a href="https://github.com/jabirsubaktagin16" class="pl-0 pr-3"><span class="icon-github"></span></a>
                 <a href="https://www.instagram.com/jabirsubaktagin/?hl=en" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
@@ -101,8 +101,8 @@
             </div>
             <div class="col-md-6 col-lg-4 text-center mb-5" data-aos="fade-up">
               <img src="images/ourTeam/person_4.jpg" alt="Image" class="img-fluid w-50 rounded-circle mb-4">
-              <h2 class="text-black font-weight-light mb-4">Mayisha Farjana</h2>
-              <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur ab quas facilis obcaecati non ea, est odit repellat distinctio incidunt, quia aliquam eveniet quod deleniti impedit sapiente atque tenetur porro?</p>
+              <h2 class="text-black font-weight-light mb-4">Mayisha Farzana</h2>
+              <p class="mb-4">Hi, I am Mayisha. I am interested in designing Website page. Website design inspires me.</p>
               <p>
                 <a href="#" class="pl-0 pr-3"><span class="icon-github"></span></a>
                 <a href="https://www.instagram.com/kennedia_01/?hl=en" class="pl-3 pr-3"><span class="icon-instagram"></span></a>
@@ -118,7 +118,6 @@
           
           <div class="row justify-content-center mb-5">
             <div class="col-md-7">
-              <h2 class="font-weight-light text-black text-center">What People Says</h2>
             </div>
           </div>
 
@@ -130,8 +129,8 @@
                     <img src="images/img_1.jpg" alt="Image" class="img-md-fluid">
                   </div>
                   <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
-                    <p class="text-black lead">&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam! Fugiat odio nam eveniet ipsam atque, corrupti porro&rdquo;</p>
-                    <p class="">&mdash; <em>James Martin</em>, <a href="#">Traveler</a></p>
+                    <p class="text-black lead">&ldquo;Don't listen to what they say, Go See&rdquo;</p>
+                    <p class="">&mdash; <em>Chinese Proverb</em></p>
                   </div>
                 </div>
               </div>
@@ -143,8 +142,8 @@
                     <img src="images/img_2.jpg" alt="Image" class="img-md-fluid">
                   </div>
                   <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
-                    <p class="text-black lead">&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam! Fugiat odio nam eveniet ipsam atque, corrupti porro&rdquo;</p>
-                    <p class="">&mdash; <em>Clair Augustin</em>, <a href="#">Traveler</a></p>
+                    <p class="text-black lead">&ldquo;Whenever you find yourself on the side of majority, it's time to pause and reflect&rdquo;</p>
+                    <p class="">&mdash; <em>Mark Twain</em></p>
                   </div>
                 </div>
               </div>
@@ -156,8 +155,8 @@
                     <img src="images/img_4.jpg" alt="Image" class="img-md-fluid">
                   </div>
                   <div class="overlap-left col-lg-6 bg-white p-md-5 align-self-center">
-                    <p class="text-black lead">&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique dolorem quisquam laudantium, incidunt id laborum, tempora aliquid labore minus. Nemo maxime, veniam! Fugiat odio nam eveniet ipsam atque, corrupti porro&rdquo;</p>
-                    <p class="">&mdash; <em>James Martin</em>, <a href="#">Traveler</a></p>
+                    <p class="text-black lead">&ldquo;Those who follow the crowd usually get lost in it&rdquo;</p>
+                    <p class="">&mdash; <em>Rick Warren</em></p>
                   </div>
                 </div>
               </div>
