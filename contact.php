@@ -1,6 +1,14 @@
 <?php 
   include "zzz-dbConnect.php";
   session_start();
+
+  if(isset($_POST['submit'])){
+
+    $sql = "INSERT INTO contact (FirstName, Lastname, Email, Subject, Message) VALUES ('".$_POST['fn']."', '".$_POST['ln'] ."', '".$_POST['email']."', '".$_POST['subject']."', '".$_POST['description']."')";
+    mysqli_query($link, $sql);
+
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -55,43 +63,43 @@
             <div class="col-md-7 mb-5">
 
               <!-- Form -->
-              <form action="#" class="p-5 bg-white">
+              <form method="POST" class="p-5 bg-white">
                 <!-- name -->
                 <div class="row form-group">
                   <div class="col-md-6 mb-3 mb-md-0">
                     <label class="text-black" for="fname">First Name</label>
-                    <input type="text" id="fname" class="form-control">
+                    <input type="text" id="fname" name="fn" class="form-control">
                   </div>
                   <div class="col-md-6">
                     <label class="text-black" for="lname">Last Name</label>
-                    <input type="text" id="lname" class="form-control">
+                    <input type="text" id="lname" name="ln" class="form-control">
                   </div>
                 </div>
                 <!-- email -->
                 <div class="row form-group">
                   <div class="col-md-12">
                     <label class="text-black" for="email">Email</label> 
-                    <input type="email" id="email" class="form-control">
+                    <input type="email" id="email" name="email" class="form-control">
                   </div>
                 </div>
                 <!-- Subject -->
                 <div class="row form-group">
                   <div class="col-md-12">
                     <label class="text-black" for="subject">Subject</label> 
-                    <input type="subject" id="subject" class="form-control">
+                    <input type="subject" id="subject" name="subject" class="form-control">
                   </div>
                 </div>
                 <!-- Message -->
                 <div class="row form-group">
                   <div class="col-md-12">
                     <label class="text-black" for="message">Message</label> 
-                    <textarea name="message" id="message" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
+                    <textarea id="message" name="description" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
                   </div>
                 </div>
                 <!-- Button -->
                 <div class="row form-group">
                   <div class="col-md-12">
-                    <input type="submit" value="Send Message" class="btn btn-primary py-2 px-4 text-white">
+                    <input type="submit" value="Send Message" name="submit" class="btn btn-primary py-2 px-4 text-white">
                   </div>
                 </div>
               </form>
