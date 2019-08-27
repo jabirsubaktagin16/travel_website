@@ -29,7 +29,7 @@
     if(isset($_POST['commentButton'])){
       if(isset($_SESSION['ID'])){
         date_default_timezone_set('Asia/Dhaka');
-        $sql = "INSERT INTO comment (UserID, Text, DateTime) VALUES ('".$_SESSION['ID'] ."', '".trim($_POST["comment"])."', '".date("M d, Y")." at ".date("h:i a")."')";
+        $sql = "INSERT INTO comment (UserID, PlaceID, Text, DateTime) VALUES ('".$_SESSION['ID'] ."', '".$placeID."','".trim($_POST["comment"])."', '".date("M d, Y")." at ".date("h:i a")."')";
         mysqli_query($link, $sql);
 
       }
