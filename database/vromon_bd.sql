@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.7.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 26, 2019 at 05:15 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 5.6.38
+-- Generation Time: Aug 27, 2019 at 06:50 AM
+-- Server version: 10.1.30-MariaDB
+-- PHP Version: 7.2.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -43,7 +43,8 @@ CREATE TABLE `blogs` (
 --
 
 INSERT INTO `blogs` (`ID`, `UserID`, `Title`, `PlaceName`, `Description`, `Tag`, `DateTime`) VALUES
-(1, 2, 'Shishu Park Tour', 'Shaheed Minar', 'I visited Shishu Park in Dhaka City and it was an amazing tour. The rides are quite good', 'park', 'Aug 22, 2019 at 05:16 pm');
+(1, 2, 'Shishu Park Tour', 'Shishu Park', 'I visited Shishu Park in Dhaka City and it was an amazing tour. The rides are quite good', 'park', 'Aug 22, 2019 at 05:16 pm'),
+(2, 2, 'Bengal Boi Ghuraghuri', 'Bengal Boi', 'Bengal Boi is a good place for book lovers. People who loves to read books will love this place certainly', 'book store', 'Aug 26, 2019 at 11:37 pm');
 
 -- --------------------------------------------------------
 
@@ -64,7 +65,24 @@ CREATE TABLE `comment` (
 --
 
 INSERT INTO `comment` (`ID`, `UserID`, `PlaceID`, `Text`, `DateTime`) VALUES
-(1, 2, 55, 'Hello', 'Aug 26, 2019 at 12:23 am');
+(1, 2, 55, 'Hello', 'Aug 26, 2019 at 12:23 am'),
+(2, 1, 34, 'It is a nice place', 'Aug 27, 2019 at 10:36 am'),
+(3, 1, 34, 'National Zoo is a wonderful place', 'Aug 27, 2019 at 10:39 am');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `ID` int(11) NOT NULL,
+  `FirstName` varchar(50) NOT NULL,
+  `LastName` varchar(50) NOT NULL,
+  `Email` varchar(100) NOT NULL,
+  `Subject` varchar(200) NOT NULL,
+  `Message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -136,7 +154,8 @@ INSERT INTO `district` (`ID`, `DestinationID`, `Name`, `Image`, `Title`, `Descri
 (19, 7, 'Rangpur', 'images/district/cover/rangpur.jpg', '', 'Rangpur is one of the major cities in Bangladesh and Rangpur Division. Rangpur was declared a district headquarters on 16 December 1769, and established as a municipality in 1869, making it one of the oldest municipalities in Bangladesh. The municipal office building was erected in 1892 under the precedence Raja Janaki Ballav, Sen. Chairman of the municipality. During the period of 1890, \"Shyama sundari khal\" was excavated for improvement of the town. '),
 (20, 7, 'Dinajpur', 'images/district/cover/dinajpur.jpg', '', 'Dinajpur district is a district in the Rangpur Division of northern Bangladesh. Dinajpur is the largest district among all sixteen northern districts of Bangladesh.'),
 (21, 6, 'Bogra', 'images/district/cover/bogra.jpg', '', 'Bogra District, officially known as Bogura District, is a northern district of Bangladesh, in the Rajshahi Division. It is called the gateway to North Bengal. Bogra is an industrial city where many small and mid-sized industries are sited. Bogra district was a part of the ancient Pundravardhana territory and the ruins of Mahasthangarh, the ancient capital of Pundravardhana, are located north of Bogra.'),
-(22, 5, 'Mymensingh', 'images/district/cover/mymensingh.jpg', '', '<p style=\"text-align: justify;\">Mymensingh is the capital of Mymensingh Division of Bangladesh. The city is located on the Brahmaputra River, about 120 km (75 mi) north of Dhaka the capital of the country. Mymensingh is the 8th administrative divisional headquarter and 12th City corporation of Bangladesh.</p>\r\n<p style=\"text-align: justify;\"><span style=\"text-decoration: underline;\"><strong>How To Go:</strong></span></p>\r\n<p style=\"text-align: justify;\"><strong>Bus:</strong></p>\r\n<p>There are several bus services from Dhaka to Mymensingh. Buses leave from the Mohakhali bus stand (10 km south of Dhaka Airport) in Dhaka to the Mashkanda bus stand in Mymensingh. You can get on any of the following buses from the Mohakhali bus stand in Dhaka, which will cost around BDT. 220:</p>\r\n<ul>\r\n<li>Ena (this is the best service)</li>\r\n<li>Shoukhin</li>\r\n</ul>\r\n<p><strong>Train:</strong></p>\r\n<p>There are several train services from Dhaka to Mymensingh. It takes almost 3 hours to reach Mymensingh from Dhaka, the capital of Bangladesh. You can get on from the Dhaka Airport or you could go to the main train station-Komlapur Rail Station.</p>\r\n<p style=\"text-align: justify;\"><span style=\"text-decoration: underline;\"><strong>Where To Stay:</strong></span></p>\r\n<table class=\"table table-hover\" width=\"0\">\r\n<tbody>\r\n<tr style=\"height: 35px;\">\r\n<td style=\"text-align: center; height: 35px;\" width=\"60%\">\r\n<p><strong>Hotel Name</strong></p>\r\n</td>\r\n</tr>\r\n<tr style=\"height: 35px;\">\r\n<td style=\"text-align: center; height: 19.4px;\" width=\"60%\">\r\n<p>Hotel Silver Castle</p>\r\n</td>\r\n</tr>\r\n<tr style=\"height: 35px;\">\r\n<td style=\"text-align: center; height: 35px;\" width=\"60%\">\r\n<p>Hotel Amir International</p>\r\n</td>\r\n</tr>\r\n<tr style=\"height: 35px;\">\r\n<td style=\"text-align: center; height: 13px;\" width=\"60%\"><header class=\"fZscne\">Hotel&nbsp;Hera</header></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p style=\"text-align: justify;\">&nbsp;</p>');
+(22, 5, 'Mymensingh', 'images/district/cover/mymensingh.jpg', '', '<p style=\"text-align: justify;\">Mymensingh is the capital of Mymensingh Division of Bangladesh. The city is located on the Brahmaputra River, about 120 km (75 mi) north of Dhaka the capital of the country. Mymensingh is the 8th administrative divisional headquarter and 12th City corporation of Bangladesh.</p>\r\n<p style=\"text-align: justify;\"><span style=\"text-decoration: underline;\"><strong>How To Go:</strong></span></p>\r\n<p style=\"text-align: justify;\"><strong>Bus:</strong></p>\r\n<p>There are several bus services from Dhaka to Mymensingh. Buses leave from the Mohakhali bus stand (10 km south of Dhaka Airport) in Dhaka to the Mashkanda bus stand in Mymensingh. You can get on any of the following buses from the Mohakhali bus stand in Dhaka, which will cost around BDT. 220:</p>\r\n<ul>\r\n<li>Ena (this is the best service)</li>\r\n<li>Shoukhin</li>\r\n</ul>\r\n<p><strong>Train:</strong></p>\r\n<p>There are several train services from Dhaka to Mymensingh. It takes almost 3 hours to reach Mymensingh from Dhaka, the capital of Bangladesh. You can get on from the Dhaka Airport or you could go to the main train station-Komlapur Rail Station.</p>\r\n<p style=\"text-align: justify;\"><span style=\"text-decoration: underline;\"><strong>Where To Stay:</strong></span></p>\r\n<table class=\"table table-hover\" width=\"0\">\r\n<tbody>\r\n<tr style=\"height: 35px;\">\r\n<td style=\"text-align: center; height: 35px;\" width=\"60%\">\r\n<p><strong>Hotel Name</strong></p>\r\n</td>\r\n</tr>\r\n<tr style=\"height: 35px;\">\r\n<td style=\"text-align: center; height: 19.4px;\" width=\"60%\">\r\n<p>Hotel Silver Castle</p>\r\n</td>\r\n</tr>\r\n<tr style=\"height: 35px;\">\r\n<td style=\"text-align: center; height: 35px;\" width=\"60%\">\r\n<p>Hotel Amir International</p>\r\n</td>\r\n</tr>\r\n<tr style=\"height: 35px;\">\r\n<td style=\"text-align: center; height: 13px;\" width=\"60%\"><header class=\"fZscne\">Hotel&nbsp;Hera</header></td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p style=\"text-align: justify;\">&nbsp;</p>'),
+(23, 4, 'Sundarban', 'images/district/cover/sundarban.jpg', '', '<p style=\"text-align: justify;\">The Sundarban is a mangrove area in the delta formed by the confluence of Ganges, Brahmaputra and Meghna Rivers in the Bay of Bengal. It spans from the Hooghly River in India\'s state of West Bengal to the Baleswar River in Bangladesh. It comprises closed and open mangrove forests, agriculturally used land, mudflats and barren land, and is intersected by multiple tidal streams and channels. Four protected areas in the Sundarbans are enlisted as UNESCO World Heritage Sites, viz Sundarbans National Park, Sundarbans West, Sundarbans South and Sundarbans East Wildlife Sanctuaries.</p>\r\n<p style=\"text-align: justify;\">&nbsp;</p>\r\n<p style=\"text-align: justify;\"><span style=\"text-decoration: underline;\"><strong>How To Go:</strong></span></p>\r\n<p style=\"text-align: justify;\"><strong>Safaris</strong>&nbsp;are available from Dhaka, Khulna&nbsp;. Ranging from an overnight trip to a week, and are probably the best way to experience the Sundarbans.</p>\r\n<p style=\"text-align: justify;\">Organizing your own trip from Munsiganj-Satkhira,Mongla or&nbsp;Khulna&nbsp;is possible (and cheaper, if you\'re a shrewd negotiator), but questionably worth the hassle. You need a permit from the Divisional Forest Office in Khulna. With permit in hand, it\'s possible to hire a boat from&nbsp;Mongla&nbsp;or Dhangmari to get you to Hiron Point. From Hiron Point you will have to hire a guide to take you into the park.</p>\r\n<p style=\"text-align: justify;\">Day trips from Mongla are not very interesting, and probably better avoided. After negotiating the price of a boat down to something only slightly less rediculous you\'ll most likely be taken to Karamjal Wildlife Center, where there are some tame deer to feed and some monkeys, crocs and snakes in cages. But surely you didn\'t come all this way to see a rundown zoo filled with depressed animals and raucous Bangladeshis. Boatmen seem to want no less than Tk 200 for the trip (locals pay Tk 50/day), and the center charges a very steep Tk 750/day entry fee for foreigners.</p>\r\n<p style=\"text-align: justify;\">From Kolkata (India), suburban trains can take you to Canning (64 km) from where launch services are available for Sundarban. Otherwise, you can avail of buses to reach Raidighi (76 km), Najat (92 km), Sonakhali (100 km) and Namkhana (105 km) from where motorboats will take you to Sundarban.</p>\r\n<p style=\"text-align: justify;\">&nbsp;</p>\r\n<p style=\"text-align: justify;\"><strong>Places To Visit:</strong></p>\r\n<p style=\"text-align: center;\"><img src=\"images/place/sundarban/hiron.jpg\" alt=\"\" /></p>\r\n<p style=\"text-align: center;\"><strong>Hiron Point</strong>&nbsp;a beautiful spot, great for spotting tigers and other wildlife.</p><br>\r\n<p style=\"text-align: center;\"><img src=\"images/place/sundarban/tin_kona.jpg\" alt=\"\" /></p>\r\n<p style=\"text-align: center;\"><strong>Tin Kona Island</strong>&nbsp;popular spot for wildlife spotting.</p><br>\r\n<p style=\"text-align: center;\"><img src=\"images/place/sundarban/Kotka-Beach.jpg\" alt=\"\" /></p>\r\n<p style=\"text-align: center;\"><strong>Katka</strong>&nbsp;a base for safaris, and good spot to see tigers and for bird-watching.</p><br>\r\n<p style=\"text-align: center;\"><img src=\"images/place/sundarban/dobla.jpg\" alt=\"\" /></p>\r\n<p style=\"text-align: center;\"><strong>Dublar Char Island</strong> it\'s possible to fish here.</p>');
 
 -- --------------------------------------------------------
 
@@ -173,7 +192,7 @@ INSERT INTO `place` (`ID`, `DistrictID`, `Name`, `Tag`, `Image`, `Location`, `De
 (12, 2, 'Chittagong War Cemetery', 'Cemetery', 'images/place/chittagong/cwc.jpg', 'Chittagong War Cemetery is located in the Mehdibag Golf Hill area of Chittagong.', 'The Chittagong Commonwealth War Cemetery or Chittagong War Cemetery is a Commonwealth War Graves Commission cemetery in Chittagong, Bangladesh. This cemetery was established to show the honor for the soldiers and others who died in World War II. The cemetery was created by the British Army, and there were originally about 400 burials. It is located at Dampara, 19 Badsha Mia Road, 22 kilometers north of the airport and 8 kilometers from the port.			'),
 (13, 2, 'Patenga Sea Beach', 'Sea Beach', 'images/place/chittagong/Patenga.jpeg', 'Patenga is a sea beach of the Bay of Bengal, located 14 kilometres south from the port city of Chittagong, Bangladesh.', 'Patenga is a sea beach of the Bay of Bengal, located 14 kilometres south from the port city of Chittagong, Bangladesh. It is near to the mouth of the Karnaphuli River. Patenga is a popular and renowned tourist spot. The beach is very close to the Bangladesh Naval Academy of the Bangladesh Navy and Shah Amanat International Airport.			'),
 (15, 2, 'Chittagong University Campus', 'Campus', 'images/place/chittagong/chittagong_university.jpg', 'University of Chittagong is situated in Union of Hathazari Upazila, 22 kilometres north of Chittagong city of Bangladesh.', 'University of Chittagong is a public research university with multidisciplinary faculties situated across a 2110-acre hilly landmass in Fatehpur Union of Hathazari Upazila, 22 kilometres north of Chittagong city of Bangladesh. This university has the largest campus among Bangladeshi universities.			'),
-(16, 2, 'Jamboree Park', 'Park', 'images/place/chittagong/	\r\njamboree_park_1.jpg', 'Jamboree Park is located at SM Morshed Road in Agrabad of Chittagong.', 'Jamboree Park is an urban park in Chittagong, Bangladesh. The park has decorated with near thousand lamps which offer a dazzling view at night. The park has 50,000 square feet (4,600 m2) water-body alongside 8,000 feet (2,400 m) walkway and compound road, internal master drain. The three feet high ground does not get submerged due to water-logging.			'),
+(16, 2, 'Jamboree Park', 'Park', 'images/place/chittagong/jamboree.jpg', 'Jamboree Park is located at SM Morshed Road in Agrabad of Chittagong.', 'Jamboree Park is an urban park in Chittagong, Bangladesh. The park has decorated with near thousand lamps which offer a dazzling view at night. The park has 50,000 square feet (4,600 m2) water-body alongside 8,000 feet (2,400 m) walkway and compound road, internal master drain. The three feet high ground does not get submerged due to water-logging.			'),
 (18, 2, 'Shrine of Bayazid Bostami', 'Tomb', 'images/place/chittagong/Tomb_of_Bayazid_Bostami.jpg', 'The Shrine of Bayazid Bostami is a shrine in Chittagong, Bangladesh.', 'The Shrine of Bayazid Bostami is a shrine in Chittagong, Bangladesh. Bayazid Bostami was a famous Persian Sufi born in Bostam, Iran. Its shrine area as a complex consists of a tomb surrounded by a brick structure along with an old mosque and a large pond.		'),
 (19, 2, 'Chandranath Hill', 'Hill', 'images/place/chittagong/Chandranath-Hill-and-Mandir-Source-Photo-bucket1-1024x768.jpg', 'Chandranath hills on the east side of Sitakunda, Chittagong and the vast ocean in the west.', 'Chandranath Hills is the eastern part of the Himalayas separated from the Himalayas. This hill goes south and south-east of the Himalayas and crosses the Feni River through Assam and Tripura states of India and joins Chittagong. From the Feni river to the Chittagong city, it is about 70 kilometers long. Sitakunda Eco Park is built on the foothills of this hill.			'),
 (21, 5, 'Cox\'s Bazar Sea Beach', 'Sea Beach', 'images/place/cox_bazar/Cox_Bazar_sea_beach_01.jpg', 'Cox\'s Bazar Beach, located at Cox\'s Bazar, Bangladesh, is the longest natural sea beach in the world running 120 kilometres (75 mi).', 'Cox\'s Bazar Beach, located at Cox\'s Bazar, Bangladesh, is the longest natural sea beach in the world running 120 kilometres (75 mi). It is the top tourist destination of Bangladesh.			'),
@@ -249,7 +268,7 @@ INSERT INTO `place` (`ID`, `DistrictID`, `Name`, `Tag`, `Image`, `Location`, `De
 (92, 7, 'Upside Down BD', '', 'images/place/dhaka/upside.jpg', 'Upside Down BD is situated in 2, 6 Block #C, Lalmatia, Dhaka.', 'Have you ever wondered what the world would look like upside down? A relatively new museum in Dhaka gives Bangladeshis a glimpse. It is called Upside Down BD. It is closed in Monday and Remains open in other days from 2 pm to 10 pm.'),
 (93, 7, 'Bengal Boi', '', 'images/place/dhaka/bengal.jpg', 'Bengal Boi is situated in 1, 3 Block#D, Lalmatia, Dhaka.', 'Bengal Boi was introduced as a bookstore and community space on November 2017, to encourage readership, stimulate creativity, and ignite the love for learning. Bengal Boi offers a wide range of quality publications, both regional and international, for sale, as well as a library featuring a diverse collection of books, magazines, comics, novels, and graphic novels, free to access for all its visitors. The bookstore and community space also houses a café and a dedicated space for children. Bengal Boi regularly hosts music and poetry recitals, reading sessions for book clubs, book launches and film screenings.'),
 (94, 2, 'Batali Hill', 'hill', 'images/place/chittagong/batali.jpg', 'Batali Hill is situated in Tigarpus area of Chittagong, just 1 kilometer away from Zero Point in Chittagong city.', 'Batali Hill is the highest mountain in the city of Chittagong. Height is about 280 feet. The road of Batali Hill reached the road from Pihala Patha by the side of the Fahim Music in the north of Ispahani Bourse in the Lalkhan Bazar area of ??Chittagong city and behind the magistrate colony. This Battali Hill is again known as \'Jilpi Hills\'. The reason is that the road leading up the hill has climbed up like a scorpion-like pitch. As a result, there is a great feeling in the other side of the mountain peak. The highest peak is called the hundredth place. The entire Chittagong city is seen as the highest peak of Batali Hill.'),
-(95, 2, 'Kattali Sea Beach', '', 'images/place/chittagong/kattali.jpg', 'Kattali is situated in Chittagong city, Bangladesh.', 'Kattali has been turned into a tourist spot because of its Mangrove forest, sea beach and grazing land. Sometimes local people call it as ‘Sundarbans of Chittagong’ because those mangroves protect the sea shore from exceptionally large ocean wave. The beach is located at South Kattali. Some parks have been set up and being maintained to attract the tourists more and those are Niribili Nirupama, etc. Tourists can get the natural view of green bushes along with the railway. There is also a temple named ‘Hori Mandir’ situated in Kattali.'),
+(95, 2, 'Kattali Sea Beach', '', 'images/place/chittagong/kattali.jpg', 'Kattali is situated in Chittagong city, Bangladesh.', '<p>Kattali has been turned into a tourist spot because of its Mangrove forest, sea beach and grazing land. Sometimes local people call it as &lsquo;Sundarbans of Chittagong&rsquo; because those mangroves protect the sea shore from exceptionally large ocean wave. The beach is located at South Kattali. Some parks have been set up and being maintained to attract the tourists more and those are Niribili Nirupama, etc. Tourists can get the natural view of green bushes along with the railway. There is also a temple named &lsquo;Hori Mandir&rsquo; situated in Kattali.</p>'),
 (99, 2, 'Sitakunda', '', 'images/place/chittagong/sitakunda.JPG', 'Sitakunda is an Upazila of Chittagong district.', 'Sitakunda is an Upazila of Chittagong district which is one of the oldest regions of human habitation in Bangladesh. Sitakunda has 280 mosques, 8 mazars, 49 Hindu temples, 3 ashrams, 3 Buddhist temples and some amazing spots which can draw tourist\'s attraction such as Chandranath hill and Eco-park. Chandranath or Sitakunda peak is the highest peak in Chittagong District. The hill has zigzag paths surrounded by trees. The tourists can enjoy their mountaineering along with the natural view of numerous green trees and clouds. There are some low hill ranges as well. There are two waterfalls in the hills named Sahasradhara (thousand streams) and Suptadhara (hidden stream) and those have been being preserved. Sitakunda Botanical Garden and Eco Park, the first Eco-park was established here along with a Botanical Garden to facilitate new plantations and to attract tourists.'),
 (100, 2, 'Horinmara Waterfall', 'waterfall', 'images/place/chittagong/ananda.jpg', 'Horinmara Waterfall is situated near Choto Komoldoho Bazar of Mirsharai, Chittagong', 'Horinmara Waterfall (also known as Horinmara Kundo Waterfall) is one of the most amazing and beautiful waterfall which is located at Chittagong district. The waterfall is covered by numerous green bushes making it hard to get the full view of waterfall. The water falls downwards directly on a beautiful basin which contains cold green fresh water. It is sometimes risky to have shower under the waterfall due to the heavy flow. Horinmara is a Bengali term which means deer hunting. Once upon a time the area was abundant with a lot of wild deers and those deers used to drink water from the basin but local hunters took their lives. This is the reason behind naming of this place most probably.'),
 (101, 14, 'Shilaidaha Kuthibari', '', 'images/place/kushtia/shilaidaha.jpg', 'Shilaidaha Kuthibari is a place in Kumarkhali Upazila of Kushtia District in Bangladesh.', 'In 1890 Tagore started managing their family estates in Shelaidaha. He stayed there for over a decade at irregular intervals between 1891 and 1901. It is a country house built by the father of Rabindranath, Maharshi Debendranath Tagore. The house was repossessed by a Bank; the Tagore Estate was a debtor to this Bank, who auctioned off the property and it became the possession of the Zamindar of Bhagyakul (Munshiganj), Roy family. The house was part of Roy Estate till the Zamindari system was abolished under the East Bengal State Acquisition and Tenancy Act of 1950. Syed Murtaza Ali, during his tenure as Divisional Commissioner of Rajshahi took the initiative to preserve the dilapidated house in 1958. During this renovation, the color of the house was inadvertently changed to red like other houses belonged to the former Zamindars of the district. '),
@@ -318,6 +337,12 @@ ALTER TABLE `comment`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `destination`
 --
 ALTER TABLE `destination`
@@ -349,19 +374,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `comment`
 --
 ALTER TABLE `comment`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `district`
 --
 ALTER TABLE `district`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `place`
