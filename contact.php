@@ -68,32 +68,32 @@
                 <div class="row form-group">
                   <div class="col-md-6 mb-3 mb-md-0">
                     <label class="text-black" for="fname">First Name</label>
-                    <input type="text" id="fname" name="fn" class="form-control">
+                    <input type="text" id="fname" name="fn" class="form-control" required>
                   </div>
                   <div class="col-md-6">
                     <label class="text-black" for="lname">Last Name</label>
-                    <input type="text" id="lname" name="ln" class="form-control">
+                    <input type="text" id="lname" name="ln" class="form-control" required>
                   </div>
                 </div>
                 <!-- email -->
                 <div class="row form-group">
                   <div class="col-md-12">
                     <label class="text-black" for="email">Email</label> 
-                    <input type="email" id="email" name="email" class="form-control">
+                    <input type="email" id="email" name="email" class="form-control" required>
                   </div>
                 </div>
                 <!-- Subject -->
                 <div class="row form-group">
                   <div class="col-md-12">
                     <label class="text-black" for="subject">Subject</label> 
-                    <input type="subject" id="subject" name="subject" class="form-control">
+                    <input type="subject" id="subject" name="subject" class="form-control" required>
                   </div>
                 </div>
                 <!-- Message -->
                 <div class="row form-group">
                   <div class="col-md-12">
                     <label class="text-black" for="message">Message</label> 
-                    <textarea id="message" name="description" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..."></textarea>
+                    <textarea id="message" name="description" cols="30" rows="7" class="form-control" placeholder="Write your notes or questions here..." required></textarea>
                   </div>
                 </div>
                 <!-- Button -->
